@@ -1,77 +1,56 @@
-[  
-  {  
-    "leagueName": "Premier League",  
-    "countryID": "NGA",  
-    "tier": 1  
-  },  
-  {  
-    "leagueName": "First Bank League",  
-    "countryID": "NGA",  
-    "tier": 2  
-  },  
-  {  
-    "leagueName": "Tunisian Ligue Professionnelle 1",  
-    "countryID": "TUN",  
-    "tier": 1  
-  },  
-  {  
-    "leagueName": "Ligue Professionnelle 1",  
-    "countryID": "ALG",  
-    "tier": 1  
-  },  
-  {  
-    "leagueName": "Egyptian Premier League",  
-    "countryID": "EGY",  
-    "tier": 1  
-  },  
-  {  
-    "leagueName": "Botswana Premier League",  
-    "countryID": "BWA",  
-    "tier": 1  
-  },  
-  {  
-    "leagueName": "South African Premier Division",  
-    "countryID": "ZAF",  
-    "tier": 1  
-  },  
-  {  
-    "leagueName": "Ghana Premier League",  
-    "countryID": "GHA",  
-    "tier": 1  
-  },  
-  {  
-    "leagueName": "Zambia Super League",  
-    "countryID": "ZMB",  
-    "tier": 1  
-  },  
-  {  
-    "leagueName": "Malawi TNM Super League",  
-    "countryID": "MWI",  
-    "tier": 1  
-  },  
-  {  
-    "leagueName": "Congo Premier League",  
-    "countryID": "COD",  
-    "tier": 1  
-  },  
-  {  
-    "leagueName": "Kenyan Premier League",  
-    "countryID": "KEN",  
-    "tier": 1  
-  },  
-  {  
-    "leagueName": "Rwandan National Football League",  
-    "countryID": "RWA",  
-    "tier": 1  
-  },  
-  {  
-    "leagueName": "Uganda Premier League",  
-    "countryID": "UGA",  
-    "tier": 1  
-  },  
-  {  
-    "leagueName": "Sierra Leone Premier League",  
-    "countryID": "SLE",  
-    "tier": 1  
-  }  
+[
+  { "id": 1, "name": "Algeria Premier League", "country_id": 1, "tier": 1 },
+  { "id": 2, "name": "Angola Premier League", "country_id": 2, "tier": 1 },
+  { "id": 3, "name": "Benin Premier League", "country_id": 3, "tier": 1 },
+  { "id": 4, "name": "Botswana Premier League", "country_id": 4, "tier": 1 },
+  { "id": 5, "name": "Burkina Faso Premier League", "country_id": 5, "tier": 1 },
+  { "id": 6, "name": "Burundi Premier League", "country_id": 6, "tier": 1 },
+  { "id": 7, "name": "Cabo Verde Premier League", "country_id": 7, "tier": 1 },
+  { "id": 8, "name": "Cameroon Premier League", "country_id": 8, "tier": 1 },
+  { "id": 9, "name": "Central African Republic Premier League", "country_id": 9, "tier": 1 },
+  { "id": 10, "name": "Chad Premier League", "country_id": 10, "tier": 1 },
+  { "id": 11, "name": "Comoros Premier League", "country_id": 11, "tier": 1 },
+  { "id": 12, "name": "Congo Premier League", "country_id": 12, "tier": 1 },
+  { "id": 13, "name": "DR Congo Premier League", "country_id": 13, "tier": 1 },
+  { "id": 14, "name": "Djibouti Premier League", "country_id": 14, "tier": 1 },
+  { "id": 15, "name": "Egypt Premier League", "country_id": 15, "tier": 1 },
+  { "id": 16, "name": "Equatorial Guinea Premier League", "country_id": 16, "tier": 1 },
+  { "id": 17, "name": "Eritrea Premier League", "country_id": 17, "tier": 1 },
+  { "id": 18, "name": "Eswatini Premier League", "country_id": 18, "tier": 1 },
+  { "id": 19, "name": "Ethiopia Premier League", "country_id": 19, "tier": 1 },
+  { "id": 20, "name": "Gabon Premier League", "country_id": 20, "tier": 1 },
+  { "id": 21, "name": "Gambia Premier League", "country_id": 21, "tier": 1 },
+  { "id": 22, "name": "Ghana Premier League", "country_id": 22, "tier": 1 },
+  { "id": 23, "name": "Guinea Premier League", "country_id": 23, "tier": 1 },
+  { "id": 24, "name": "Guinea-Bissau Premier League", "country_id": 24, "tier": 1 },
+  { "id": 25, "name": "Ivory Coast Premier League", "country_id": 25, "tier": 1 },
+  { "id": 26, "name": "Kenya Premier League", "country_id": 26, "tier": 1 },
+  { "id": 27, "name": "Lesotho Premier League", "country_id": 27, "tier": 1 },
+  { "id": 28, "name": "Liberia Premier League", "country_id": 28, "tier": 1 },
+  { "id": 29, "name": "Libya Premier League", "country_id": 29, "tier": 1 },
+  { "id": 30, "name": "Madagascar Premier League", "country_id": 30, "tier": 1 },
+  { "id": 31, "name": "Malawi Premier League", "country_id": 31, "tier": 1 },
+  { "id": 32, "name": "Mali Premier League", "country_id": 32, "tier": 1 },
+  { "id": 33, "name": "Mauritania Premier League", "country_id": 33, "tier": 1 },
+  { "id": 34, "name": "Mauritius Premier League", "country_id": 34, "tier": 1 },
+  { "id": 35, "name": "Morocco Premier League", "country_id": 35, "tier": 1 },
+  { "id": 36, "name": "Mozambique Premier League", "country_id": 36, "tier": 1 },
+  { "id": 37, "name": "Namibia Premier League", "country_id": 37, "tier": 1 },
+  { "id": 38, "name": "Niger Premier League", "country_id": 38, "tier": 1 },
+  { "id": 39, "name": "Nigeria Premier League", "country_id": 39, "tier": 1 },
+  { "id": 40, "name": "Rwanda Premier League", "country_id": 40, "tier": 1 },
+  { "id": 41, "name": "Sao Tome and Principe Premier League", "country_id": 41, "tier": 1 },
+  { "id": 42, "name": "Senegal Premier League", "country_id": 42, "tier": 1 },
+  { "id": 43, "name": "Seychelles Premier League", "country_id": 43, "tier": 1 },
+  { "id": 44, "name": "Sierra Leone Premier League", "country_id": 44, "tier": 1 },
+  { "id": 45, "name": "Somalia Premier League", "country_id": 45, "tier": 1 },
+  { "id": 46, "name": "South Africa Premier League", "country_id": 46, "tier": 1 },
+  { "id": 47, "name": "South Sudan Premier League", "country_id": 47, "tier": 1 },
+  { "id": 48, "name": "Sudan Premier League", "country_id": 48, "tier": 1 },
+  { "id": 49, "name": "Tanzania Premier League", "country_id": 49, "tier": 1 },
+  { "id": 50, "name": "Togo Premier League", "country_id": 50, "tier": 1 },
+  { "id": 51, "name": "Tunisia Premier League", "country_id": 51, "tier": 1 },
+  { "id": 52, "name": "Uganda Premier League", "country_id": 52, "tier": 1 },
+  { "id": 53, "name": "Zambia Premier League", "country_id": 53, "tier": 1 },
+  { "id": 54, "name": "Zimbabwe Premier League", "country_id": 54, "tier": 1 }
 ]
