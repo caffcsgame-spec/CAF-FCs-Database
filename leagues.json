@@ -1,0 +1,77 @@
+[  
+  {  
+    "leagueName": "Premier League",  
+    "countryID": "NGA",  
+    "tier": 1  
+  },  
+  {  
+    "leagueName": "First Bank League",  
+    "countryID": "NGA",  
+    "tier": 2  
+  },  
+  {  
+    "leagueName": "Tunisian Ligue Professionnelle 1",  
+    "countryID": "TUN",  
+    "tier": 1  
+  },  
+  {  
+    "leagueName": "Ligue Professionnelle 1",  
+    "countryID": "ALG",  
+    "tier": 1  
+  },  
+  {  
+    "leagueName": "Egyptian Premier League",  
+    "countryID": "EGY",  
+    "tier": 1  
+  },  
+  {  
+    "leagueName": "Botswana Premier League",  
+    "countryID": "BWA",  
+    "tier": 1  
+  },  
+  {  
+    "leagueName": "South African Premier Division",  
+    "countryID": "ZAF",  
+    "tier": 1  
+  },  
+  {  
+    "leagueName": "Ghana Premier League",  
+    "countryID": "GHA",  
+    "tier": 1  
+  },  
+  {  
+    "leagueName": "Zambia Super League",  
+    "countryID": "ZMB",  
+    "tier": 1  
+  },  
+  {  
+    "leagueName": "Malawi TNM Super League",  
+    "countryID": "MWI",  
+    "tier": 1  
+  },  
+  {  
+    "leagueName": "Congo Premier League",  
+    "countryID": "COD",  
+    "tier": 1  
+  },  
+  {  
+    "leagueName": "Kenyan Premier League",  
+    "countryID": "KEN",  
+    "tier": 1  
+  },  
+  {  
+    "leagueName": "Rwandan National Football League",  
+    "countryID": "RWA",  
+    "tier": 1  
+  },  
+  {  
+    "leagueName": "Uganda Premier League",  
+    "countryID": "UGA",  
+    "tier": 1  
+  },  
+  {  
+    "leagueName": "Sierra Leone Premier League",  
+    "countryID": "SLE",  
+    "tier": 1  
+  }  
+]
