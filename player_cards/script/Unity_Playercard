@@ -1,65 +1,125 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections.Generic;
 
-// Script hii inapaswa kuattach kwenye prefab ya card canvas
-public class PlayerCardGenerator : MonoBehaviour
+// Enum ya card tiers
+public enum CardTier
 {
-    [System.Serializable]
-    public class Player
+    Common,
+    Rare,
+    Epic
+}
+
+// Class ya Player Stats
+[System.Serializable]
+public class PlayerStats
+{
+    public int Pace;
+    public int Shooting;
+    public int Passing;
+    public int Dribbling;
+    public int Defending;
+    public int Physical;
+}
+
+// Class ya Player Data
+[System.Serializable]
+public class PlayerData
+{
+    public string Name;
+    public string Position;
+    public string Nationality;
+    public int Age;
+    public float Height;
+    public string PreferredFoot;
+    public string Club;
+    public CardTier Tier;
+    public PlayerStats Stats;
+    public Sprite PlayerPhoto;
+    public Sprite ClubLogo;
+    public Sprite CountryFlag;
+}
+
+// Main PlayerCard Script
+public class Unity_PlayerCard : MonoBehaviour
+{
+    [Header("UI References")]
+    public Image CardBackground;
+    public Image PlayerPhotoImage;
+    public Image ClubLogoImage;
+    public Image CountryFlagImage;
+
+    public Text NameText;
+    public Text PositionText;
+    public Text AgeText;
+    public Text HeightText;
+    public Text FootText;
+
+    public Text PaceText;
+    public Text ShootingText;
+    public Text PassingText;
+    public Text DribblingText;
+    public Text DefendingText;
+    public Text PhysicalText;
+
+    [Header("Card Sprites")]
+    public Sprite CommonCardSprite;
+    public Sprite RareCardSprite;
+    public Sprite EpicCardSprite;
+
+    private PlayerData currentPlayer;
+
+    // Method ya render card kulingana na player data
+    public void SetupCard(PlayerData player)
     {
-        public string Name;
-        public string Position;
-        public string Nationality;
-        public int Age;
-        public string CardType; // Common, Rare, Epic
-        public int OverallRating;
-        // public int JerseyNumber; // Tunabana jersey number, haionyeshi
-    }
+        currentPlayer = player;
 
-    public Text cardText; // Reference to Text component on the card prefab
-    public Image cardBackground; // Reference to Image for background
-    public Color commonColor = Color.gray;
-    public Color rareColor = Color.blue;
-    public Color epicColor = Color.yellow;
-
-    // List ya players inapatikana kutoka JSON (una load JSON kwa method nyingine)
-    public List<Player> players = new List<Player>();
-
-    // Generate card kwa mchezaji mmoja
-    public void GenerateCard(Player player)
-    {
-        // Set card text without jersey number
-        cardText.text = $"{player.Name}\n{player.Position}\n{player.Nationality}\nAge: {player.Age}\nRating: {player.OverallRating}";
-
-        // Set card background color by card type
-        switch(player.CardType.ToLower())
+        // Set card background kulingana na tier
+        switch(player.Tier)
         {
-            case "common":
-                cardBackground.color = commonColor;
+            case CardTier.Common:
+                CardBackground.sprite = CommonCardSprite;
                 break;
-            case "rare":
-                cardBackground.color = rareColor;
+            case CardTier.Rare:
+                CardBackground.sprite = RareCardSprite;
                 break;
-            case "epic":
-                cardBackground.color = epicColor;
-                break;
-            default:
-                cardBackground.color = Color.white;
+            case CardTier.Epic:
+                CardBackground.sprite = EpicCardSprite;
                 break;
         }
+
+        // Set player UI
+        NameText.text = player.Name;
+        PositionText.text = player.Position;
+        AgeText.text = player.Age.ToString();
+        HeightText.text = player.Height > 0 ? player.Height + " cm" : "-";
+        FootText.text = !string.IsNullOrEmpty(player.PreferredFoot) ? player.PreferredFoot : "-";
+
+        // Stats
+        PaceText.text = player.Stats.Pace.ToString();
+        ShootingText.text = player.Stats.Shooting.ToString();
+        PassingText.text = player.Stats.Passing.ToString();
+        DribblingText.text = player.Stats.Dribbling.ToString();
+        DefendingText.text = player.Stats.Defending.ToString();
+        PhysicalText.text = player.Stats.Physical.ToString();
+
+        // Images
+        PlayerPhotoImage.sprite = player.PlayerPhoto;
+        ClubLogoImage.sprite = player.ClubLogo;
+        CountryFlagImage.sprite = player.CountryFlag;
     }
 
-    // Generate cards zote kutoka list
-    public void GenerateAllCards()
+    // Optional: Update card dynamically (e.g., animation)
+    public void UpdateCardStats(PlayerStats newStats)
     {
-        foreach (var player in players)
-        {
-            GenerateCard(player);
-            // Hapa unaweza instantiate prefab card kwa UI panel au scroll view
-            // Example:
-            // GameObject newCard = Instantiate(cardPrefab, parentTransform);
-            // newCard.GetComponent<PlayerCardGenerator>().GenerateCard(player);
-        }
+        currentPlayer.Stats = newStats;
+
+        PaceText.text = newStats.Pace.ToString();
+        ShootingText.text = newStats.Shooting.ToString();
+        PassingText.text = newStats.Passing.ToString();
+        DribblingText.text = newStats.Dribbling.ToString();
+        DefendingText.text = newStats.Defending.ToString();
+        PhysicalText.text = newStats.Physical.ToString();
     }
 }
