@@ -1,0 +1,36 @@
+#include "UE_PlayerCardWidget.h"
+#include "Components/TextBlock.h"
+#include "Components/Image.h"
+
+void UUE_PlayerCardWidget::GenerateCard(const FPlayer& Player)
+{
+    if(NameText)
+        NameText->SetText(FText::FromString(Player.Name));
+
+    if(PositionText)
+        PositionText->SetText(FText::FromString(Player.Position));
+
+    if(NationalityText)
+        NationalityText->SetText(FText::FromString(Player.Nationality));
+
+    if(AgeText)
+        AgeText->SetText(FText::FromString(FString::Printf(TEXT("Age: %d"), Player.Age)));
+
+    if(RatingText)
+        RatingText->SetText(FText::AsNumber(Player.OverallRating));
+
+    if(CardBackground)
+    {
+        if(Player.CardType.Equals("Common", ESearchCase::IgnoreCase))
+            CardBackground->SetColorAndOpacity(CommonColor);
+
+        else if(Player.CardType.Equals("Rare", ESearchCase::IgnoreCase))
+            CardBackground->SetColorAndOpacity(RareColor);
+
+        else if(Player.CardType.Equals("Epic", ESearchCase::IgnoreCase))
+            CardBackground->SetColorAndOpacity(EpicColor);
+
+        else
+            CardBackground->SetColorAndOpacity(FLinearColor::White);
+    }
+}
