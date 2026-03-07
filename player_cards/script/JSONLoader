@@ -1,0 +1,57 @@
+UCLASS()
+class YOURGAME_API UPlayerCardManager : public UObject
+{
+    GENERATED_BODY()
+
+public:
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    TSubclassOf<UUserWidget> PlayerCardWidgetClass;
+
+    UPROPERTY(BlueprintReadWrite)
+    TArray<FPlayer> Players;
+
+    UFUNCTION(BlueprintCallable)
+    void LoadPlayersFromJSON(const FString& FilePath)
+    {
+        FString JsonString;
+        FFileHelper::LoadFileToString(JsonString, *FilePath);
+
+        TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(JsonString);
+        TArray<TSharedPtr<FJsonValue>> JsonArray;
+
+        if (FJsonSerializer::Deserialize(Reader, JsonArray))
+        {
+            Players.Empty();
+
+            for (auto& Value : JsonArray)
+            {
+                TSharedPtr<FJsonObject> Obj = Value->AsObject();
+                if (Obj.IsValid())
+                {
+                    FPlayer Player;
+                    Player.Name = Obj->GetStringField("name");
+                    Player.Position = Obj->GetStringField("position");
+                    Player.Nationality = Obj->GetStringField("nationality");
+                    Player.Age = Obj->GetIntegerField("age");
+                    Player.OverallRating = Obj->GetIntegerField("overall_rating");
+                    Player.CardType = Obj->GetStringField("card_type");
+
+                    Players.Add(Player);
+                }
+            }
+        }
+    }
+
+    UFUNCTION(BlueprintCallable)
+    void GenerateAllPlayerCards(UVerticalBox* ParentBox)
+    {
+        if (!PlayerCardWidgetClass) return;
+
+        for (FPlayer& Player : Players)
+        {
+            UPlayerCardWidget* Card = CreateWidget<UPlayerCardWidget>(ParentBox->GetWorld(), PlayerCardWidgetClass);
+            Card->GenerateCard(Player);
+            ParentBox->AddChild(Card);
+        }
+    }
+};
