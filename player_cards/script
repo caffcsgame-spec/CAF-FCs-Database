@@ -1,1 +1,65 @@
+using UnityEngine;
+using UnityEngine.UI;
+using System.Collections.Generic;
 
+// Script hii inapaswa kuattach kwenye prefab ya card canvas
+public class PlayerCardGenerator : MonoBehaviour
+{
+    [System.Serializable]
+    public class Player
+    {
+        public string Name;
+        public string Position;
+        public string Nationality;
+        public int Age;
+        public string CardType; // Common, Rare, Epic
+        public int OverallRating;
+        // public int JerseyNumber; // Tunabana jersey number, haionyeshi
+    }
+
+    public Text cardText; // Reference to Text component on the card prefab
+    public Image cardBackground; // Reference to Image for background
+    public Color commonColor = Color.gray;
+    public Color rareColor = Color.blue;
+    public Color epicColor = Color.yellow;
+
+    // List ya players inapatikana kutoka JSON (una load JSON kwa method nyingine)
+    public List<Player> players = new List<Player>();
+
+    // Generate card kwa mchezaji mmoja
+    public void GenerateCard(Player player)
+    {
+        // Set card text without jersey number
+        cardText.text = $"{player.Name}\n{player.Position}\n{player.Nationality}\nAge: {player.Age}\nRating: {player.OverallRating}";
+
+        // Set card background color by card type
+        switch(player.CardType.ToLower())
+        {
+            case "common":
+                cardBackground.color = commonColor;
+                break;
+            case "rare":
+                cardBackground.color = rareColor;
+                break;
+            case "epic":
+                cardBackground.color = epicColor;
+                break;
+            default:
+                cardBackground.color = Color.white;
+                break;
+        }
+    }
+
+    // Generate cards zote kutoka list
+    public void GenerateAllCards()
+    {
+        foreach (var player in players)
+        {
+            GenerateCard(player);
+            // Hapa unaweza instantiate prefab card kwa UI panel au scroll view
+            // Example:
+            // GameObject newCard = Instantiate(cardPrefab, parentTransform);
+            // newCard.GetComponent<PlayerCardGenerator>().GenerateCard(player);
+        }
+    }
+}
