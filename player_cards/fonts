@@ -1,1 +1,28 @@
+// Header
+UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Player Card")
+UFont* CardFont;
 
+// CPP
+if (PlayerNameText && CardFont)
+{
+    FSlateFontInfo FontInfo;
+    FontInfo.FontObject = CardFont;
+    FontInfo.Size = 24; // Adjust size
+    PlayerNameText->SetFont(FontInfo);
+}
+
+if (PositionText && CardFont)
+{
+    FSlateFontInfo FontInfo;
+    FontInfo.FontObject = CardFont;
+    FontInfo.Size = 18;
+    PositionText->SetFont(FontInfo);
+}
+
+if (AgeText && CardFont)
+{
+    FSlateFontInfo FontInfo;
+    FontInfo.FontObject = CardFont;
+    FontInfo.Size = 18;
+    AgeText->SetFont(FontInfo);
+}
