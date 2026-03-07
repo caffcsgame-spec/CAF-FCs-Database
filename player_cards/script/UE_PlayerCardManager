@@ -1,30 +1,42 @@
+// UE_PlayerCardManager.h
 #pragma once
 
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UE_PlayerCardWidget.h"
+#include "PlayerCardWidget.h"
+#include "Engine/DataTable.h"
 #include "UE_PlayerCardManager.generated.h"
 
 UCLASS(Blueprintable)
-class YOURGAME_API UUE_PlayerCardManager : public UObject
+class CAF_FC_DATABASE_API UUE_PlayerCardManager : public UObject
 {
     GENERATED_BODY()
 
 public:
+    // Constructor
+    UUE_PlayerCardManager();
 
-    // Widget class ya card
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
-    TSubclassOf<class UUE_PlayerCardWidget> PlayerCardWidgetClass;
+    // Widget Blueprint class reference
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Player Cards")
+    TSubclassOf<UPlayerCardWidget> CardWidgetClass;
 
-    // List ya players
-    UPROPERTY(BlueprintReadWrite)
-    TArray<FPlayer> Players;
+    // All active player card widgets
+    UPROPERTY(BlueprintReadOnly, Category="Player Cards")
+    TArray<UPlayerCardWidget*> ActiveCards;
 
-    // Load players kutoka JSON
-    UFUNCTION(BlueprintCallable)
-    void LoadPlayersFromJSON(const FString& FilePath);
+    // Player Database
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Player Cards")
+    TArray<FPlayerData> PlayerDatabase;
 
-    // Generate cards zote kwenye UI container
-    UFUNCTION(BlueprintCallable)
-    void GenerateAllPlayerCards(class UVerticalBox* ParentBox);
+    // Spawn a card for a specific player
+    UFUNCTION(BlueprintCallable, Category="Player Cards")
+    UPlayerCardWidget* SpawnCardForPlayer(int32 PlayerID);
+
+    // Spawn all cards in database
+    UFUNCTION(BlueprintCallable, Category="Player Cards")
+    void SpawnAllCards(UUserWidget* ParentWidget);
+
+private:
+    // Internal helper
+    UPlayerCardWidget* CreateCard(const FPlayerData& PlayerData, UUserWidget* ParentWidget);
 };
