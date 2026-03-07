@@ -1,36 +1,59 @@
 #include "UE_PlayerCardWidget.h"
-#include "Components/TextBlock.h"
 #include "Components/Image.h"
+#include "Components/TextBlock.h"
+#include "Engine/Texture2D.h"
+#include "Kismet/KismetRenderingLibrary.h"
 
-void UUE_PlayerCardWidget::GenerateCard(const FPlayer& Player)
+void UUE_PlayerCardWidget::SetupCard(const FPlayerData& PlayerData)
 {
-    if(NameText)
-        NameText->SetText(FText::FromString(Player.Name));
+    CurrentPlayerData = PlayerData;
 
-    if(PositionText)
-        PositionText->SetText(FText::FromString(Player.Position));
-
-    if(NationalityText)
-        NationalityText->SetText(FText::FromString(Player.Nationality));
-
-    if(AgeText)
-        AgeText->SetText(FText::FromString(FString::Printf(TEXT("Age: %d"), Player.Age)));
-
-    if(RatingText)
-        RatingText->SetText(FText::AsNumber(Player.OverallRating));
-
-    if(CardBackground)
+    if (PlayerNameText)
     {
-        if(Player.CardType.Equals("Common", ESearchCase::IgnoreCase))
-            CardBackground->SetColorAndOpacity(CommonColor);
+        PlayerNameText->SetText(FText::FromString(PlayerData.Name));
+    }
 
-        else if(Player.CardType.Equals("Rare", ESearchCase::IgnoreCase))
-            CardBackground->SetColorAndOpacity(RareColor);
+    if (PositionText)
+    {
+        PositionText->SetText(FText::FromString(PlayerData.Position));
+    }
 
-        else if(Player.CardType.Equals("Epic", ESearchCase::IgnoreCase))
-            CardBackground->SetColorAndOpacity(EpicColor);
+    if (AgeText)
+    {
+        AgeText->SetText(FText::AsNumber(PlayerData.Age));
+    }
 
+    // Optional: set images if paths exist
+    if (PlayerPhoto && !PlayerData.PhotoPath.IsEmpty())
+    {
+        UTexture2D* Texture = Cast<UTexture2D>(StaticLoadObject(UTexture2D::StaticClass(), nullptr, *PlayerData.PhotoPath));
+        if (Texture) PlayerPhoto->SetBrushFromTexture(Texture);
+    }
+
+    if (ClubLogo && !PlayerData.ClubLogoPath.IsEmpty())
+    {
+        UTexture2D* Texture = Cast<UTexture2D>(StaticLoadObject(UTexture2D::StaticClass(), nullptr, *PlayerData.ClubLogoPath));
+        if (Texture) ClubLogo->SetBrushFromTexture(Texture);
+    }
+
+    if (CountryFlag && !PlayerData.CountryFlagPath.IsEmpty())
+    {
+        UTexture2D* Texture = Cast<UTexture2D>(StaticLoadObject(UTexture2D::StaticClass(), nullptr, *PlayerData.CountryFlagPath));
+        if (Texture) CountryFlag->SetBrushFromTexture(Texture);
+    }
+
+    // Set card background depending on rarity
+    if (CardBackground)
+    {
+        FString Path;
+        if (PlayerData.CardType.Equals("Epic"))
+            Path = "/Game/PlayerCards/Textures/EpicCardBG.EpicCardBG";
+        else if (PlayerData.CardType.Equals("Rare"))
+            Path = "/Game/PlayerCards/Textures/RareCardBG.RareCardBG";
         else
-            CardBackground->SetColorAndOpacity(FLinearColor::White);
+            Path = "/Game/PlayerCards/Textures/CommonCardBG.CommonCardBG";
+
+        UTexture2D* BGTexture = Cast<UTexture2D>(StaticLoadObject(UTexture2D::StaticClass(), nullptr, *Path));
+        if (BGTexture) CardBackground->SetBrushFromTexture(BGTexture);
     }
 }
