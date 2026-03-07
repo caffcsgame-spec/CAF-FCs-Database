@@ -1,0 +1,30 @@
+#pragma once
+
+#include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
+#include "UE_PlayerCardWidget.h"
+#include "UE_PlayerCardManager.generated.h"
+
+UCLASS(Blueprintable)
+class YOURGAME_API UUE_PlayerCardManager : public UObject
+{
+    GENERATED_BODY()
+
+public:
+
+    // Widget class ya card
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    TSubclassOf<class UUE_PlayerCardWidget> PlayerCardWidgetClass;
+
+    // List ya players
+    UPROPERTY(BlueprintReadWrite)
+    TArray<FPlayer> Players;
+
+    // Load players kutoka JSON
+    UFUNCTION(BlueprintCallable)
+    void LoadPlayersFromJSON(const FString& FilePath);
+
+    // Generate cards zote kwenye UI container
+    UFUNCTION(BlueprintCallable)
+    void GenerateAllPlayerCards(class UVerticalBox* ParentBox);
+};
