@@ -1,61 +1,53 @@
+// UE_PlayerCardManager.cpp
 #include "UE_PlayerCardManager.h"
-#include "Components/VerticalBox.h"
-#include "UE_PlayerCardWidget.h"
+#include "Blueprint/UserWidget.h"
 
-#include "Misc/FileHelper.h"
-#include "Misc/Paths.h"
-#include "Serialization/JsonReader.h"
-#include "Serialization/JsonSerializer.h"
-
-void UUE_PlayerCardManager::LoadPlayersFromJSON(const FString& FilePath)
+UUE_PlayerCardManager::UUE_PlayerCardManager()
 {
-    FString JsonString;
+    ActiveCards = TArray<UPlayerCardWidget*>();
+    PlayerDatabase = TArray<FPlayerData>();
+}
 
-    if(!FFileHelper::LoadFileToString(JsonString, *FilePath))
-        return;
+UPlayerCardWidget* UUE_PlayerCardManager::SpawnCardForPlayer(int32 PlayerID)
+{
+    if (!CardWidgetClass) return nullptr;
 
-    TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(JsonString);
-    TArray<TSharedPtr<FJsonValue>> JsonArray;
-
-    if(FJsonSerializer::Deserialize(Reader, JsonArray))
+    for (const FPlayerData& Data : PlayerDatabase)
     {
-        Players.Empty();
-
-        for(auto& Value : JsonArray)
+        // Chagua player kwa ID
+        // Hapa tunassuming PlayerID = index+1
+        if (PlayerID == PlayerDatabase.IndexOfByKey(Data)+1)
         {
-            TSharedPtr<FJsonObject> Obj = Value->AsObject();
-
-            if(!Obj.IsValid())
-                continue;
-
-            FPlayer Player;
-
-            Player.Name = Obj->GetStringField("name");
-            Player.Position = Obj->GetStringField("position");
-            Player.Nationality = Obj->GetStringField("nationality");
-            Player.Age = Obj->GetIntegerField("age");
-            Player.OverallRating = Obj->GetIntegerField("overall_rating");
-            Player.CardType = Obj->GetStringField("card_type");
-
-            Players.Add(Player);
+            // Temporary parent = nullptr
+            return CreateCard(Data, nullptr);
         }
+    }
+    return nullptr;
+}
+
+void UUE_PlayerCardManager::SpawnAllCards(UUserWidget* ParentWidget)
+{
+    if (!CardWidgetClass) return;
+
+    for (const FPlayerData& Data : PlayerDatabase)
+    {
+        UPlayerCardWidget* Card = CreateCard(Data, ParentWidget);
+        if (Card) ActiveCards.Add(Card);
     }
 }
 
-void UUE_PlayerCardManager::GenerateAllPlayerCards(UVerticalBox* ParentBox)
+UPlayerCardWidget* UUE_PlayerCardManager::CreateCard(const FPlayerData& PlayerData, UUserWidget* ParentWidget)
 {
-    if(!ParentBox || !PlayerCardWidgetClass)
-        return;
+    if (!CardWidgetClass) return nullptr;
 
-    for(FPlayer& Player : Players)
+    UPlayerCardWidget* NewCard = CreateWidget<UPlayerCardWidget>(ParentWidget, CardWidgetClass);
+    if (!NewCard) return nullptr;
+
+    NewCard->SetupCard(PlayerData);
+    if (ParentWidget)
     {
-        UUE_PlayerCardWidget* Card =
-        CreateWidget<UUE_PlayerCardWidget>(ParentBox->GetWorld(), PlayerCardWidgetClass);
-
-        if(Card)
-        {
-            Card->GenerateCard(Player);
-            ParentBox->AddChild(Card);
-        }
+        NewCard->AddToViewport();
     }
+
+    return NewCard;
 }
