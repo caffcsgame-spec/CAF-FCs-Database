@@ -1,0 +1,67 @@
+#pragma once
+
+#include "CoreMinimal.h"
+#include "Blueprint/UserWidget.h"
+#include "UE_PlayerCardWidget.generated.h"
+
+USTRUCT(BlueprintType)
+struct FPlayer
+{
+    GENERATED_BODY()
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    FString Name;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    FString Position;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    FString Nationality;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    int32 Age;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    int32 OverallRating;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    FString CardType; // Common, Rare, Epic
+};
+
+UCLASS()
+class YOURGAME_API UUE_PlayerCardWidget : public UUserWidget
+{
+    GENERATED_BODY()
+
+public:
+
+    UPROPERTY(meta = (BindWidget))
+    class UTextBlock* NameText;
+
+    UPROPERTY(meta = (BindWidget))
+    class UTextBlock* PositionText;
+
+    UPROPERTY(meta = (BindWidget))
+    class UTextBlock* NationalityText;
+
+    UPROPERTY(meta = (BindWidget))
+    class UTextBlock* AgeText;
+
+    UPROPERTY(meta = (BindWidget))
+    class UTextBlock* RatingText;
+
+    UPROPERTY(meta = (BindWidget))
+    class UImage* CardBackground;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    FLinearColor CommonColor = FLinearColor::Gray;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    FLinearColor RareColor = FLinearColor::Blue;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    FLinearColor EpicColor = FLinearColor::Yellow;
+
+    UFUNCTION(BlueprintCallable)
+    void GenerateCard(const FPlayer& Player);
+};
