@@ -1,0 +1,61 @@
+#include "UE_PlayerCardManager.h"
+#include "Components/VerticalBox.h"
+#include "UE_PlayerCardWidget.h"
+
+#include "Misc/FileHelper.h"
+#include "Misc/Paths.h"
+#include "Serialization/JsonReader.h"
+#include "Serialization/JsonSerializer.h"
+
+void UUE_PlayerCardManager::LoadPlayersFromJSON(const FString& FilePath)
+{
+    FString JsonString;
+
+    if(!FFileHelper::LoadFileToString(JsonString, *FilePath))
+        return;
+
+    TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(JsonString);
+    TArray<TSharedPtr<FJsonValue>> JsonArray;
+
+    if(FJsonSerializer::Deserialize(Reader, JsonArray))
+    {
+        Players.Empty();
+
+        for(auto& Value : JsonArray)
+        {
+            TSharedPtr<FJsonObject> Obj = Value->AsObject();
+
+            if(!Obj.IsValid())
+                continue;
+
+            FPlayer Player;
+
+            Player.Name = Obj->GetStringField("name");
+            Player.Position = Obj->GetStringField("position");
+            Player.Nationality = Obj->GetStringField("nationality");
+            Player.Age = Obj->GetIntegerField("age");
+            Player.OverallRating = Obj->GetIntegerField("overall_rating");
+            Player.CardType = Obj->GetStringField("card_type");
+
+            Players.Add(Player);
+        }
+    }
+}
+
+void UUE_PlayerCardManager::GenerateAllPlayerCards(UVerticalBox* ParentBox)
+{
+    if(!ParentBox || !PlayerCardWidgetClass)
+        return;
+
+    for(FPlayer& Player : Players)
+    {
+        UUE_PlayerCardWidget* Card =
+        CreateWidget<UUE_PlayerCardWidget>(ParentBox->GetWorld(), PlayerCardWidgetClass);
+
+        if(Card)
+        {
+            Card->GenerateCard(Player);
+            ParentBox->AddChild(Card);
+        }
+    }
+}
