@@ -1,67 +1,77 @@
+// UE_PlayerCardWidget.h
 #pragma once
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
 #include "UE_PlayerCardWidget.generated.h"
 
+// Forward declare player data struct
 USTRUCT(BlueprintType)
-struct FPlayer
+struct FPlayerData
 {
     GENERATED_BODY()
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    int32 PlayerID;
+
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     FString Name;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     FString Position;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     FString Nationality;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     int32 Age;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
-    int32 OverallRating;
-
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     FString CardType; // Common, Rare, Epic
+
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    FString PhotoPath; // Optional for auto-generated photo
+
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    FString ClubLogoPath;
+
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    FString CountryFlagPath;
 };
 
-UCLASS()
-class YOURGAME_API UUE_PlayerCardWidget : public UUserWidget
+UCLASS(Blueprintable)
+class CAF_FC_DATABASE_API UUE_PlayerCardWidget : public UUserWidget
 {
     GENERATED_BODY()
 
 public:
+    // Setup card with player data
+    UFUNCTION(BlueprintCallable, Category="Player Card")
+    void SetupCard(const FPlayerData& PlayerData);
+
+    // Player Data reference
+    UPROPERTY(BlueprintReadOnly, Category="Player Card")
+    FPlayerData CurrentPlayerData;
+
+    // Optional: Card visuals
+    UPROPERTY(meta = (BindWidget))
+    class UImage* PlayerPhoto;
 
     UPROPERTY(meta = (BindWidget))
-    class UTextBlock* NameText;
+    class UImage* ClubLogo;
+
+    UPROPERTY(meta = (BindWidget))
+    class UImage* CountryFlag;
+
+    UPROPERTY(meta = (BindWidget))
+    class UTextBlock* PlayerNameText;
 
     UPROPERTY(meta = (BindWidget))
     class UTextBlock* PositionText;
 
     UPROPERTY(meta = (BindWidget))
-    class UTextBlock* NationalityText;
-
-    UPROPERTY(meta = (BindWidget))
     class UTextBlock* AgeText;
 
     UPROPERTY(meta = (BindWidget))
-    class UTextBlock* RatingText;
-
-    UPROPERTY(meta = (BindWidget))
-    class UImage* CardBackground;
-
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
-    FLinearColor CommonColor = FLinearColor::Gray;
-
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
-    FLinearColor RareColor = FLinearColor::Blue;
-
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
-    FLinearColor EpicColor = FLinearColor::Yellow;
-
-    UFUNCTION(BlueprintCallable)
-    void GenerateCard(const FPlayer& Player);
+    class UImage* CardBackground; // Set texture depending on Common/Rare/Epic
 };
