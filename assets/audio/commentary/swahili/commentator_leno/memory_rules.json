@@ -1,0 +1,23 @@
+{
+  "memory_duration_minutes": 90,
+  "trigger_rules": {
+    "miss_then_goal": {
+      "check_event": "goal",
+      "previous_event": "miss",
+      "time_window_seconds": 120
+    },
+    "hat_trick_watch": {
+      "player_goals": 2
+    },
+    "dominating_player": {
+      "touches_threshold": 30
+    },
+    "repeat_attack": {
+      "consecutive_attacks": 3
+    },
+    "counter_attack": {
+      "fast_break_distance": 30
+    }
+  },
+  "cooldown_seconds": 12
+}
