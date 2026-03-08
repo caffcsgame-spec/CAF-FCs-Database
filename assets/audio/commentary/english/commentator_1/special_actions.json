@@ -1,0 +1,27 @@
+{
+  "goal": [
+    "GOOOAL! {player_name} scores for {team_name}!",
+    "What a finish from {player_name}!",
+    "{team_name} take the lead through {player_name}!"
+  ],
+
+  "penalty_goal": [
+    "{player_name} calmly converts the penalty!",
+    "No mistake from the spot by {player_name}!"
+  ],
+
+  "red_card": [
+    "That is a straight red card!",
+    "The referee sends him off!"
+  ],
+
+  "big_save": [
+    "What a save from the goalkeeper!",
+    "An incredible stop!"
+  ],
+
+  "last_minute_goal": [
+    "Unbelievable! {player_name} scores in the final moments!",
+    "Late drama here!"
+  ]
+}
