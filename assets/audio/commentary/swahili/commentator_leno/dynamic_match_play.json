@@ -1,0 +1,74 @@
+{
+  "event_triggers": {
+    "goal_scored": [
+      "goal",
+      "last_minute_goal",
+      "hat_trick",
+      "equalizer"
+    ],
+    "shot_on_target": [
+      "normal_shot",
+      "hard_shot",
+      "chip_shot",
+      "curve_shot"
+    ],
+    "missed_shot": [
+      "missed_chance",
+      "blocked",
+      "crossbar_hit"
+    ],
+    "foul": [
+      "tackle_foul",
+      "handball",
+      "dangerous_play"
+    ],
+    "skill_move": [
+      "dribble_success",
+      "nutmeg",
+      "fake_shot",
+      "heel_pass"
+    ],
+    "corner": ["corner_kick", "dangerous_corner"],
+    "free_kick": ["direct_free", "indirect_free"],
+    "penalty": ["penalty_goal", "penalty_missed"],
+    "counter_attack": ["fast_break", "through_ball_attack"]
+  },
+  "dynamic_lines": {
+    "goal": [
+      "Oooh yes ni goli! {player_name} amefanikisha!",
+      "Mashabiki wanafurahia goli la {player_name}!"
+    ],
+    "last_minute_goal": [
+      "Dakika za mwisho {player_name} amefunga goli la hatari!",
+      "Goli la mwisho la mechi, {player_name} amepatia sasa!"
+    ],
+    "hat_trick": [
+      "Ooh ni Hat-trick kwa {player_name} sasa! Mchezo huu ni kama wake!",
+      "Anaendelea kuandika historia, hat-trick!"
+    ],
+    "equalizer": [
+      "{team_name} wanalinganisha scoreboard!",
+      "Goli la kusawazisha kutoka kwa {player_name}!"
+    ],
+    "missed_chance": [
+      "{player_name} amepoteza nafasi nzuri!",
+      "Ingekuwa goli kama angeongeza jitihada!"
+    ],
+    "dribble_success": [
+      "{player_name} anadribble vizuri, anazidi kudhihirisha ujuzi aliobarikiwa!",
+      "Dribble nzuri sana kutoka kwa {player_name}!"
+    ],
+    "nutmeg": [
+      "{player_name} amemlazimisha kipa kwa nutmeg!",
+      "Fint ya ajabu, nutmeg kwa {opponent_player}!"
+    ],
+    "tackle_foul": [
+      "Foul iliyofanyika na {player_name}.",
+      "Referee ametoa kadi kwa {player_name}."
+    ],
+    "fast_break": [
+      "{team_name} wanapiga counter attack haraka!",
+      "Tukio la hatari, {player_name} anachukua mpira kwa kasi!"
+    ]
+  }
+}
