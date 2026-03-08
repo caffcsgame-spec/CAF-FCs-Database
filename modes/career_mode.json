@@ -1,0 +1,69 @@
+{
+  "version": "1.1",
+
+  "currency": {
+    "name": "CAF Coins",
+    "abbreviation": "CC",
+    "icon_path": "assets/ui/icons/cc_icon.png"
+  },
+
+  "general": {
+    "season_length_weeks": 40,
+    "transfer_window_start_week": 10,
+    "transfer_window_end_week": 20,
+    "training_days_per_week": 5,
+    "max_active_transfers": 5
+  },
+
+  "player_progression": {
+    "experience_gain_rate": 1.0,
+    "skill_cap_increase_per_season": 2,
+    "age_fatigue_factor": 0.98,
+    "injury_probability_modifier": 1.0,
+    "future_scouting_system_enabled": true,
+    "scouted_player_growth_factor": 0.75
+  },
+
+  "team_management": {
+    "budget_start": 5000000,
+    "budget_growth_rate": 0.05,
+    "loan_system_enabled": true,
+    "squad_size_min": 18,
+    "squad_size_max": 25,
+    "contract_duration_min": 1,
+    "contract_duration_max": 5
+  },
+
+  "match_simulation": {
+    "auto_lineup_selection": true,
+    "rotation_system_enabled": true,
+    "injury_simulation": true,
+    "morale_effect_on_performance": true,
+    "fatigue_effect_on_performance": true
+  },
+
+  "transfer_market": {
+    "min_offer_value": 10000,
+    "max_offer_value": 500000,
+    "transfer_success_chance": 0.8,
+    "agent_fee_percent": 5,
+    "loan_fee_percent": 3,
+    "currency": "CC"
+  },
+
+  "scouting": {
+    "scouting_range": "continental",
+    "player_age_min": 16,
+    "player_age_max": 35,
+    "scouting_accuracy": 0.85,
+    "scouting_cost_per_player": 5000,
+    "currency": "CC",
+    "future_integration": true
+  },
+
+  "achievements": {
+    "trophies": true,
+    "player_awards": true,
+    "manager_awards": true
+  }
+  }
