@@ -1,0 +1,32 @@
+{
+  "pass": [
+    "{player_name} passes the ball.",
+    "Nice pass from {player_name}.",
+    "{player_name} moves it forward."
+  ],
+
+  "long_pass": [
+    "{player_name} sends a long ball forward.",
+    "A searching pass from {player_name}."
+  ],
+
+  "skill_move": [
+    "Brilliant skill from {player_name}!",
+    "{player_name} shows great technique."
+  ],
+
+  "shot": [
+    "{player_name} takes the shot!",
+    "A strike from {player_name}!"
+  ],
+
+  "interception": [
+    "Well intercepted by {player_name}.",
+    "{player_name} reads the play perfectly."
+  ],
+
+  "tackle": [
+    "Strong tackle from {player_name}.",
+    "{player_name} wins the ball back."
+  ]
+}
