@@ -1,0 +1,74 @@
+{
+  "version": "1.0",
+  "difficulty_levels": [
+
+    {
+      "difficulty_id": 1,
+      "difficulty_name": "easy",
+      "description": "AI makes more mistakes and reacts slower.",
+      "ai_modifiers": {
+        "reaction_speed": 0.4,
+        "decision_making": 0.45,
+        "passing_accuracy": 0.5,
+        "shooting_accuracy": 0.45,
+        "dribbling_success": 0.45,
+        "defensive_awareness": 0.4,
+        "pressing_intensity": 0.4,
+        "goalkeeper_performance": 0.45,
+        "error_frequency": 0.7
+      }
+    },
+
+    {
+      "difficulty_id": 2,
+      "difficulty_name": "normal",
+      "description": "Balanced AI performance suitable for most players.",
+      "ai_modifiers": {
+        "reaction_speed": 0.6,
+        "decision_making": 0.6,
+        "passing_accuracy": 0.65,
+        "shooting_accuracy": 0.6,
+        "dribbling_success": 0.6,
+        "defensive_awareness": 0.6,
+        "pressing_intensity": 0.6,
+        "goalkeeper_performance": 0.6,
+        "error_frequency": 0.5
+      }
+    },
+
+    {
+      "difficulty_id": 3,
+      "difficulty_name": "pro",
+      "description": "AI reacts faster and makes smarter tactical decisions.",
+      "ai_modifiers": {
+        "reaction_speed": 0.8,
+        "decision_making": 0.8,
+        "passing_accuracy": 0.8,
+        "shooting_accuracy": 0.75,
+        "dribbling_success": 0.75,
+        "defensive_awareness": 0.8,
+        "pressing_intensity": 0.75,
+        "goalkeeper_performance": 0.75,
+        "error_frequency": 0.3
+      }
+    },
+
+    {
+      "difficulty_id": 4,
+      "difficulty_name": "legendary",
+      "description": "Top level AI with near perfect reactions and tactical awareness.",
+      "ai_modifiers": {
+        "reaction_speed": 0.95,
+        "decision_making": 0.9,
+        "passing_accuracy": 0.9,
+        "shooting_accuracy": 0.85,
+        "dribbling_success": 0.85,
+        "defensive_awareness": 0.9,
+        "pressing_intensity": 0.9,
+        "goalkeeper_performance": 0.9,
+        "error_frequency": 0.1
+      }
+    }
+
+  ]
+}
