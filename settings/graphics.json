@@ -1,0 +1,201 @@
+{
+  "graphics_settings": {
+
+    "auto_optimization": {
+      "enabled": true,
+      "detect_on_first_launch": true,
+
+      "device_profiles": {
+
+        "low_end": {
+          "requirements": {
+            "ram_gb_max": 3,
+            "gpu_level": "low"
+          },
+          "settings": {
+            "resolution": "720p",
+            "frame_rate": 30,
+            "graphics_quality": "low",
+            "texture_quality": "low",
+            "shadow_quality": "off",
+            "crowd_density": "low",
+            "stadium_detail": "low",
+            "player_model_quality": "medium",
+            "grass_quality": "low",
+            "anti_aliasing": "off",
+            "motion_blur": false
+          }
+        },
+
+        "mid_range": {
+          "requirements": {
+            "ram_gb_min": 4,
+            "ram_gb_max": 7,
+            "gpu_level": "medium"
+          },
+          "settings": {
+            "resolution": "1080p",
+            "frame_rate": 60,
+            "graphics_quality": "medium",
+            "texture_quality": "medium",
+            "shadow_quality": "medium",
+            "crowd_density": "medium",
+            "stadium_detail": "medium",
+            "player_model_quality": "high",
+            "grass_quality": "medium",
+            "anti_aliasing": "fxaa",
+            "motion_blur": false
+          }
+        },
+
+        "high_end": {
+          "requirements": {
+            "ram_gb_min": 8,
+            "gpu_level": "high"
+          },
+          "settings": {
+            "resolution": "1440p",
+            "frame_rate": 120,
+            "graphics_quality": "ultra",
+            "texture_quality": "high",
+            "shadow_quality": "high",
+            "crowd_density": "high",
+            "stadium_detail": "high",
+            "player_model_quality": "high",
+            "grass_quality": "high",
+            "anti_aliasing": "taa",
+            "motion_blur": true
+          }
+        }
+
+      }
+    },
+
+    "manual_override": {
+      "enabled": true
+    },
+
+    "resolution": {
+      "options": [
+        "720p",
+        "1080p",
+        "1440p"
+      ],
+      "default": "auto"
+    },
+
+    "frame_rate": {
+      "options": [
+        30,
+        60,
+        90,
+        120
+      ],
+      "default": 60
+    },
+
+    "graphics_quality": {
+      "options": [
+        "low",
+        "medium",
+        "high",
+        "ultra"
+      ],
+      "default": "medium"
+    },
+
+    "texture_quality": {
+      "options": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "default": "medium"
+    },
+
+    "shadow_quality": {
+      "options": [
+        "off",
+        "low",
+        "medium",
+        "high"
+      ],
+      "default": "medium"
+    },
+
+    "crowd_density": {
+      "options": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "default": "medium"
+    },
+
+    "stadium_detail": {
+      "options": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "default": "medium"
+    },
+
+    "player_model_quality": {
+      "options": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "default": "high"
+    },
+
+    "grass_quality": {
+      "options": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "default": "medium"
+    },
+
+    "weather_effects": {
+      "rain": true,
+      "fog": true,
+      "dynamic_weather": true
+    },
+
+    "anti_aliasing": {
+      "options": [
+        "off",
+        "fxaa",
+        "taa"
+      ],
+      "default": "fxaa"
+    },
+
+    "motion_blur": {
+      "enabled": false
+    },
+
+    "camera_render_distance": {
+      "options": [
+        "near",
+        "medium",
+        "far"
+      ],
+      "default": "medium"
+    },
+
+    "battery_saver_mode": {
+      "enabled": false,
+      "effects": {
+        "limit_fps": 30,
+        "reduce_crowd": true,
+        "reduce_shadows": true,
+        "reduce_weather_effects": true
+      }
+    }
+
+  }
+}
