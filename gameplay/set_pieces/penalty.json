@@ -1,0 +1,52 @@
+{
+  "version": "1.0",
+
+  "general": {
+    "shot_accuracy_base": 0.88,
+    "shot_power_base": 28.0,
+    "goalkeeper_pressure_influence": 0.75,
+    "player_stamina_influence": 0.85,
+    "goalkeeper_reaction_influence": 0.8
+  },
+
+  "penalty_types": {
+    "normal_penalty": {
+      "speed": 28.0,
+      "accuracy": 0.88,
+      "curve": 0.05
+    },
+    "chip_penalty": {
+      "speed": 18.0,
+      "accuracy": 0.82,
+      "arc_height": 3.0,
+      "curve": 0.15
+    },
+    "finesse_penalty": {
+      "speed": 24.0,
+      "accuracy": 0.90,
+      "curve": 0.2
+    },
+    "power_penalty": {
+      "speed": 32.0,
+      "accuracy": 0.78,
+      "curve": 0.05
+    }
+  },
+
+  "player_attributes_influence": {
+    "penalty_stat_weight": 0.9,
+    "shooting_stat_weight": 0.85,
+    "stamina_influence": 0.8
+  },
+
+  "goalkeeper_attributes_influence": {
+    "goalkeeping_stat_weight": 0.9,
+    "reaction_stat_weight": 0.85,
+    "stamina_influence": 0.8
+  },
+
+  "environment_effects": {
+    "wind_influence": 0.1,
+    "wet_pitch_modifier": 0.95
+  }
+}
