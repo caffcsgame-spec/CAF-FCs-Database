@@ -1,0 +1,27 @@
+{
+  "cooldown_seconds": 3,
+
+  "priority_events": [
+    "goal",
+    "penalty_goal",
+    "red_card",
+    "big_save"
+  ],
+
+  "secondary_events": [
+    "shot",
+    "skill_move",
+    "tackle",
+    "interception"
+  ],
+
+  "low_priority_events": [
+    "pass",
+    "long_pass"
+  ],
+
+  "suppression_rules": {
+    "max_lines_per_10_seconds": 3,
+    "ignore_repeated_passes": true
+  }
+}
