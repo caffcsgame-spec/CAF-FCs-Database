@@ -1,0 +1,14 @@
+{
+  "recap_goal": [
+    "Alipoteza nafasi mwanzoni, lakini {player_name} sasa amefunga goli!",
+    "Kipigo chake sasa kimefungwa na {player_name}."
+  ],
+  "recap_missed": [
+    "{player_name} alipoteza nafasi muhimu.",
+    "Fursa hii itamfuatilia {player_name}."
+  ],
+  "recap_rivalry": [
+    "Ushindani huu daima unasisimua!",
+    "Mashabiki wanapenda mechi hizi zenye ushindani mkali."
+  ]
+}
