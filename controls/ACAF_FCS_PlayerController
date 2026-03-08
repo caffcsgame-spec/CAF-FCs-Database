@@ -1,0 +1,18 @@
+// Bind inputs in PlayerController
+void ACAF_FCS_PlayerController::SetupInputComponent()
+{
+    Super::SetupInputComponent();
+
+    // Movement
+    InputComponent->BindAxis("MoveForward", this, &ACAF_FCS_PlayerController::MoveForward);
+    InputComponent->BindAxis("MoveRight", this, &ACAF_FCS_PlayerController::MoveRight);
+
+    // Actions
+    InputComponent->BindAction("Pass", IE_Pressed, this, &ACAF_FCS_PlayerController::Pass);
+    InputComponent->BindAction("Shoot", IE_Pressed, this, &ACAF_FCS_PlayerController::Shoot);
+    InputComponent->BindAction("Cross", IE_Pressed, this, &ACAF_FCS_PlayerController::Cross);
+
+    // Skill Moves
+    InputComponent->BindAction("SkillShot", IE_Pressed, this, &ACAF_FCS_PlayerController::SkillShot);
+    InputComponent->BindAction("SkillPass", IE_Pressed, this, &ACAF_FCS_PlayerController::SkillPass);
+}
