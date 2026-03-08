@@ -1,0 +1,25 @@
+{
+  "commentator_id": "eng_com_01",
+  "name": "CAF Lead Commentator",
+
+  "voice_profile": {
+    "language": "english",
+    "accent": "african_international",
+    "tone": "energetic",
+    "pitch": 1.0,
+    "speed": 1.05,
+    "emotion_range": "high"
+  },
+
+  "style": {
+    "personality": "excited_and_descriptive",
+    "analysis_level": "medium",
+    "reaction_speed": "fast"
+  },
+
+  "speech_patterns": {
+    "goal_excitement": "very_high",
+    "build_up_commentary": "balanced",
+    "player_name_priority": true
+  }
+}
