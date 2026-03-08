@@ -1,0 +1,53 @@
+{
+  "version": "1.0",
+
+  "general": {
+    "pass_accuracy_base": 0.85,
+    "pass_speed_base": 18.0,
+    "max_pass_distance": 40.0,
+    "through_ball_distance_bonus": 1.2,
+    "chip_pass_distance_bonus": 1.1,
+    "player_pressure_influence": 0.75
+  },
+
+  "pass_types": {
+    "short_pass": {
+      "speed": 14.0,
+      "accuracy": 0.92,
+      "curve": 0.05
+    },
+    "long_pass": {
+      "speed": 22.0,
+      "accuracy": 0.78,
+      "curve": 0.08
+    },
+    "through_ball": {
+      "speed": 20.0,
+      "accuracy": 0.80,
+      "curve": 0.10
+    },
+    "chip_pass": {
+      "speed": 16.0,
+      "accuracy": 0.82,
+      "arc_height": 2.0,
+      "curve": 0.07
+    },
+    "cross": {
+      "speed": 20.0,
+      "accuracy": 0.75,
+      "curve": 0.12,
+      "arc_height": 3.0
+    }
+  },
+
+  "environment_effects": {
+    "wet_pitch_accuracy_modifier": 0.9,
+    "wind_speed_influence": 0.15
+  },
+
+  "player_attributes_influence": {
+    "passing_stat_weight": 0.75,
+    "vision_stat_weight": 0.65,
+    "stamina_influence": 0.8
+  }
+}
