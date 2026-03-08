@@ -1,0 +1,23 @@
+{
+  "momentum_states": {
+
+    "balanced": [
+      "Both teams are evenly matched so far."
+    ],
+
+    "team_dominating": [
+      "{team_name} are putting a lot of pressure now.",
+      "{team_name} are controlling the game."
+    ],
+
+    "team_under_pressure": [
+      "{team_name} are struggling to keep possession.",
+      "They need to calm the game down."
+    ]
+  },
+
+  "momentum_trigger": {
+    "shots_difference": 3,
+    "possession_difference": 15
+  }
+}
