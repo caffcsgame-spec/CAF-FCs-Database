@@ -1,0 +1,21 @@
+{
+  "missed_then_scored": [
+    "{player_name} amepoteza nafasi mwanzoni, lakini sasa anafunga goli!",
+    "Alipoteza nafasi awali, lakini {player_name} sasa amefanikisha!"
+  ],
+  "goalkeeper_redemption": [
+    "Kipa alikosea hapo awali, lakini sasa amekokota mpira vizuri!",
+    "Kipa anajirekebisha kwa kuteleza mpira huu."
+  ],
+  "repeat_attack": [
+    "Timu ya {team_name} inashambulia mara kwa mara.",
+    "Shambulio jingine hatari kutoka {team_name}."
+  ],
+  "revenge_tackle": [
+    "{player_name} alipoteza mpira hapo awali, lakini sasa amerejea vizuri!"
+  ],
+  "counter_attack": [
+    "{team_name} wanapiga counter attack haraka!",
+    "Hii inaweza kuwa hatari kwa {opponent_team}."
+  ]
+}
