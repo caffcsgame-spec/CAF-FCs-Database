@@ -1,0 +1,5 @@
+{
+  "calm": ["build_up", "possession", "pass"],
+  "excited": ["goal_chance", "skill_move", "dangerous_attack", "counter_attack"],
+  "screaming": ["last_minute_goal", "penalty_goal", "winning_goal", "hat_trick"]
+}
