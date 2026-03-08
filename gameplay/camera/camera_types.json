@@ -1,0 +1,75 @@
+{
+  "version": "1.0",
+
+  "types": {
+    "default": {
+      "description": "Standard gameplay camera following the player and ball",
+      "fov": 60,
+      "distance": 12.0,
+      "height": 8.0,
+      "rotation_smooth_speed": 4.0,
+      "tracking": {
+        "player_follow": true,
+        "ball_focus": true,
+        "blend_player_ball": 0.7
+      }
+    },
+
+    "broadcast": {
+      "description": "TV-style broadcast camera for cinematic angles",
+      "fov": 55,
+      "distance": 25.0,
+      "height": 15.0,
+      "rotation_smooth_speed": 2.0,
+      "tracking": {
+        "player_follow": false,
+        "ball_focus": true,
+        "blend_player_ball": 0.9
+      }
+    },
+
+    "isometric": {
+      "description": "Top-down isometric view, good for tactical overview",
+      "fov": 50,
+      "distance": 18.0,
+      "height": 20.0,
+      "rotation_smooth_speed": 3.0,
+      "tracking": {
+        "player_follow": false,
+        "ball_focus": true,
+        "blend_player_ball": 0.5
+      }
+    },
+
+    "first_person": {
+      "description": "First person view from player's perspective",
+      "fov": 70,
+      "distance": 0.0,
+      "height": 1.8,
+      "rotation_smooth_speed": 6.0,
+      "tracking": {
+        "player_follow": true,
+        "ball_focus": false,
+        "blend_player_ball": 1.0
+      }
+    },
+
+    "free_camera": {
+      "description": "Free roam camera, can be controlled manually",
+      "fov": 60,
+      "distance": 12.0,
+      "height": 8.0,
+      "rotation_smooth_speed": 5.0,
+      "tracking": {
+        "player_follow": false,
+        "ball_focus": false,
+        "blend_player_ball": 0.0
+      },
+      "controls": {
+        "keyboard_mouse": true,
+        "touch": true,
+        "gamepad": true
+      }
+    }
+  }
+}
