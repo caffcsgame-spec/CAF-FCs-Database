@@ -1,0 +1,18 @@
+{
+  "hat_trick_alert": [
+    "{player_name} yupo goli moja tu hadi hat-trick!",
+    "Mchezaji huyu {player_name} anaangaliwa sana sasa."
+  ],
+  "two_goals": [
+    "{player_name} amefunga mara mbili!",
+    "Goli jingine la {player_name}!"
+  ],
+  "dominant_player": [
+    "{player_name} anatawala uwanja wa katikati.",
+    "Kila kitu kinapita kwa {player_name}."
+  ],
+  "quiet_player": [
+    "Imekuwa kimya kwa {player_name}.",
+    "{player_name} bado hajafanya kitu kikubwa."
+  ]
+}
