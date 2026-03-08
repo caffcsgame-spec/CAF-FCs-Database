@@ -1,0 +1,55 @@
+{
+  "version": "1.0",
+
+  "general": {
+    "shot_accuracy_base": 0.82,
+    "shot_power_base": 28.0,
+    "shot_max_distance": 30.0,
+    "goalkeeper_pressure_influence": 0.7,
+    "stamina_influence": 0.85
+  },
+
+  "shot_types": {
+    "normal_shot": {
+      "speed": 28.0,
+      "accuracy": 0.85,
+      "curve": 0.05,
+      "height_modifier": 1.0
+    },
+    "hard_shot": {
+      "speed": 34.0,
+      "accuracy": 0.78,
+      "curve": 0.07,
+      "height_modifier": 1.0
+    },
+    "chip_shot": {
+      "speed": 18.0,
+      "accuracy": 0.82,
+      "curve": 0.1,
+      "arc_height": 2.5
+    },
+    "finesse_shot": {
+      "speed": 24.0,
+      "accuracy": 0.88,
+      "curve": 0.15,
+      "spin_influence": 0.8
+    },
+    "curve_shot": {
+      "speed": 26.0,
+      "accuracy": 0.84,
+      "curve": 0.25,
+      "spin_influence": 1.0
+    }
+  },
+
+  "environment_effects": {
+    "wet_pitch_accuracy_modifier": 0.9,
+    "wind_speed_influence": 0.2
+  },
+
+  "player_attributes_influence": {
+    "shooting_stat_weight": 0.8,
+    "finishing_stat_weight": 0.85,
+    "stamina_influence": 0.8
+  }
+}
