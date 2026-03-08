@@ -1,0 +1,85 @@
+{
+  "version": "1.1",
+
+  "currency": {
+    "name": "CAF Coins",
+    "abbreviation": "CC",
+    "icon_path": "assets/ui/icons/cc_icon.png"
+  },
+
+  "tournaments": [
+    {
+      "id": 1,
+      "name": "CAF Champions League",
+      "teams_count": 32,
+      "group_stage": {
+        "enabled": true,
+        "difficulty": "pro"
+      },
+      "knockout_stage": {
+        "enabled": true,
+        "difficulty": "legendary"
+      },
+      "match_duration_minutes": 12,
+      "allow_custom_duration": true,
+      "stadium_randomization": true,
+      "currency_reward_per_win": 2000,
+      "currency_reward_per_goal": 500
+    },
+    {
+      "id": 2,
+      "name": "CAF Confederation Cup",
+      "teams_count": 24,
+      "group_stage": {
+        "enabled": true,
+        "difficulty": "pro"
+      },
+      "knockout_stage": {
+        "enabled": true,
+        "difficulty": "legendary"
+      },
+      "match_duration_minutes": 12,
+      "allow_custom_duration": true,
+      "stadium_randomization": true,
+      "currency_reward_per_win": 1500,
+      "currency_reward_per_goal": 400
+    },
+    {
+      "id": 3,
+      "name": "AFCON",
+      "teams_count": 24,
+      "group_stage": {
+        "enabled": true,
+        "difficulty": "pro"
+      },
+      "knockout_stage": {
+        "enabled": true,
+        "difficulty": "legendary"
+      },
+      "match_duration_minutes": 12,
+      "allow_custom_duration": true,
+      "stadium_randomization": true,
+      "currency_reward_per_win": 3000,
+      "currency_reward_per_goal": 500
+    }
+  ],
+
+  "controls": {
+    "gamepad_enabled": true,
+    "touch_enabled": true,
+    "custom_mapping": true
+  },
+
+  "gameplay": {
+    "injury_simulation": true,
+    "fatigue_effect": true,
+    "morale_effect": true,
+    "player_control_substitution": true
+  },
+
+  "achievements": {
+    "tournament_winner": true,
+    "top_scorer": true,
+    "best_player_award": true
+  }
+}
