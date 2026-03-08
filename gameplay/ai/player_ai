@@ -1,0 +1,176 @@
+{
+  "version": "1.0",
+  "player_ai_profiles": [
+
+    {
+      "role": "striker",
+      "attack_behavior": {
+        "off_ball_movement": 0.9,
+        "run_behind_defense": 0.85,
+        "shooting_priority": 0.9,
+        "passing_priority": 0.4,
+        "dribbling_attempt": 0.6,
+        "positioning_box": 0.9
+      },
+      "defense_behavior": {
+        "pressing": 0.4,
+        "tackle_attempt": 0.3,
+        "interceptions": 0.2
+      },
+      "decision_making": {
+        "reaction_speed": 0.8,
+        "risk_taking": 0.7,
+        "support_teammates": 0.6
+      }
+    },
+
+    {
+      "role": "winger",
+      "attack_behavior": {
+        "off_ball_movement": 0.85,
+        "run_behind_defense": 0.75,
+        "shooting_priority": 0.6,
+        "passing_priority": 0.6,
+        "dribbling_attempt": 0.85,
+        "cross_frequency": 0.8
+      },
+      "defense_behavior": {
+        "pressing": 0.6,
+        "tackle_attempt": 0.4,
+        "interceptions": 0.4
+      },
+      "decision_making": {
+        "reaction_speed": 0.8,
+        "risk_taking": 0.7,
+        "support_teammates": 0.7
+      }
+    },
+
+    {
+      "role": "attacking_midfielder",
+      "attack_behavior": {
+        "off_ball_movement": 0.8,
+        "run_behind_defense": 0.6,
+        "shooting_priority": 0.6,
+        "passing_priority": 0.85,
+        "through_ball_frequency": 0.8,
+        "dribbling_attempt": 0.6
+      },
+      "defense_behavior": {
+        "pressing": 0.6,
+        "tackle_attempt": 0.5,
+        "interceptions": 0.5
+      },
+      "decision_making": {
+        "reaction_speed": 0.85,
+        "risk_taking": 0.6,
+        "support_teammates": 0.9
+      }
+    },
+
+    {
+      "role": "central_midfielder",
+      "attack_behavior": {
+        "off_ball_movement": 0.7,
+        "shooting_priority": 0.5,
+        "passing_priority": 0.85,
+        "through_ball_frequency": 0.6,
+        "dribbling_attempt": 0.5
+      },
+      "defense_behavior": {
+        "pressing": 0.7,
+        "tackle_attempt": 0.6,
+        "interceptions": 0.7
+      },
+      "decision_making": {
+        "reaction_speed": 0.85,
+        "risk_taking": 0.5,
+        "support_teammates": 0.85
+      }
+    },
+
+    {
+      "role": "defensive_midfielder",
+      "attack_behavior": {
+        "off_ball_movement": 0.5,
+        "shooting_priority": 0.3,
+        "passing_priority": 0.75,
+        "dribbling_attempt": 0.4
+      },
+      "defense_behavior": {
+        "pressing": 0.85,
+        "tackle_attempt": 0.8,
+        "interceptions": 0.85,
+        "block_shots": 0.7
+      },
+      "decision_making": {
+        "reaction_speed": 0.85,
+        "risk_taking": 0.3,
+        "support_teammates": 0.8
+      }
+    },
+
+    {
+      "role": "fullback",
+      "attack_behavior": {
+        "overlap_runs": 0.7,
+        "cross_frequency": 0.7,
+        "passing_priority": 0.6,
+        "dribbling_attempt": 0.5
+      },
+      "defense_behavior": {
+        "pressing": 0.75,
+        "tackle_attempt": 0.8,
+        "interceptions": 0.75,
+        "mark_wingers": 0.85
+      },
+      "decision_making": {
+        "reaction_speed": 0.8,
+        "risk_taking": 0.5,
+        "support_teammates": 0.7
+      }
+    },
+
+    {
+      "role": "center_back",
+      "attack_behavior": {
+        "off_ball_movement": 0.2,
+        "shooting_priority": 0.1,
+        "passing_priority": 0.6
+      },
+      "defense_behavior": {
+        "pressing": 0.7,
+        "tackle_attempt": 0.85,
+        "interceptions": 0.85,
+        "clear_ball": 0.9,
+        "mark_striker": 0.9,
+        "block_shots": 0.9
+      },
+      "decision_making": {
+        "reaction_speed": 0.8,
+        "risk_taking": 0.2,
+        "support_teammates": 0.7
+      }
+    },
+
+    {
+      "role": "goalkeeper",
+      "attack_behavior": {
+        "short_pass_distribution": 0.6,
+        "long_pass_distribution": 0.7
+      },
+      "defense_behavior": {
+        "rush_out": 0.7,
+        "save_reaction": 0.9,
+        "catch_vs_punch": 0.6,
+        "penalty_reaction": 0.85
+      },
+      "decision_making": {
+        "reaction_speed": 0.9,
+        "risk_taking": 0.5,
+        "support_defense": 0.8
+      }
+    }
+
+  ]
+}
