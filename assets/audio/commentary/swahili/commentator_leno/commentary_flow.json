@@ -1,0 +1,60 @@
+{
+  "commentary_order": [
+    "kickoff_intro",
+    "early_possession",
+    "shot_on_target",
+    "missed_shot",
+    "foul_event",
+    "corner_event",
+    "free_kick_event",
+    "penalty_event",
+    "goal_scored",
+    "counter_attack",
+    "skill_move_event",
+    "repeat_attack_event",
+    "halftime_recap",
+    "second_half_intro",
+    "last_minute_pressure",
+    "last_minute_goal",
+    "post_match_recap"
+  ],
+  "flow_logic": {
+    "kickoff_intro": {
+      "trigger": "kickoff",
+      "lines": [
+        "Naam Mchezo umeanza upo na leo commentator wako wa kiswahili!",
+        "Mashabiki wapo tayari kwa dakika 90 za ushindani!"
+      ]
+    },
+    "early_possession": {
+      "trigger": "first_5_minutes",
+      "lines": [
+        "Timu ya {team_name} inajaribu kudhibiti mpira mwanzoni.",
+        "Uwanja umesheheni nguvu na mashabiki wanashangilia!"
+      ]
+    },
+    "halftime_recap": {
+      "trigger": "halftime",
+      "lines": [
+        "Nusu ya kwanza imeisha, matokeo ni {score}.",
+        "{team_name} wanaonekana kujiamini, lakini bado kuna muda wa kurekebisha."
+      ]
+    },
+    "post_match_recap": {
+      "trigger": "fulltime",
+      "lines": [
+        "Mchezo umeisha, matokeo ya mwisho ni {score}.",
+        "Mashabiki wanashangilia, {player_name} amekuwa nyota wa mechi!"
+      ]
+    },
+    "dynamic_event_injection": {
+      "trigger": "match_event",
+      "priority": "high",
+      "rules": [
+        "Kila tukio linapofanyika, inject line kutoka dynamic_match_play.json kulingana na event_triggers",
+        "Cooldown ya dakika 0.2–0.5 ili kuepuka kukatika kwa lines",
+        "Use emotion_tone.json ku-adjust tone ya sauti kulingana na tukio"
+      ]
+    }
+  }
+}
