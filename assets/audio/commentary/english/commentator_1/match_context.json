@@ -1,0 +1,31 @@
+{
+  "match_types": {
+
+    "friendly": {
+      "tone": "relaxed",
+      "analysis": "light"
+    },
+
+    "league": {
+      "tone": "balanced",
+      "analysis": "standard"
+    },
+
+    "tournament_group": {
+      "tone": "serious",
+      "analysis": "moderate"
+    },
+
+    "tournament_final": {
+      "tone": "dramatic",
+      "analysis": "high"
+    }
+  },
+
+  "special_lines": {
+    "final": [
+      "This is the biggest match of the tournament!",
+      "The trophy is on the line today!"
+    ]
+  }
+}
