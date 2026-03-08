@@ -1,0 +1,86 @@
+{
+  "version": "1.0",
+  "default_camera": "broadcast",
+
+  "camera_modes": [
+
+    {
+      "camera_id": 1,
+      "camera_name": "broadcast",
+      "description": "Classic TV broadcast style camera.",
+      "height": 28,
+      "distance": 38,
+      "angle": 12,
+      "zoom": 1.0,
+      "follow_speed": 0.8,
+      "rotation_speed": 0.6,
+      "dynamic_zoom": true,
+      "ball_focus_priority": 0.7
+    },
+
+    {
+      "camera_id": 2,
+      "camera_name": "wide",
+      "description": "Wider camera for better field visibility.",
+      "height": 35,
+      "distance": 45,
+      "angle": 14,
+      "zoom": 0.9,
+      "follow_speed": 0.75,
+      "rotation_speed": 0.6,
+      "dynamic_zoom": true,
+      "ball_focus_priority": 0.65
+    },
+
+    {
+      "camera_id": 3,
+      "camera_name": "dynamic",
+      "description": "Camera dynamically adjusts based on ball position.",
+      "height": 30,
+      "distance": 40,
+      "angle": 13,
+      "zoom": 1.0,
+      "follow_speed": 0.9,
+      "rotation_speed": 0.7,
+      "dynamic_zoom": true,
+      "ball_focus_priority": 0.85
+    },
+
+    {
+      "camera_id": 4,
+      "camera_name": "player",
+      "description": "Camera closer to controlled player.",
+      "height": 18,
+      "distance": 22,
+      "angle": 10,
+      "zoom": 1.1,
+      "follow_speed": 1.0,
+      "rotation_speed": 0.9,
+      "dynamic_zoom": false,
+      "ball_focus_priority": 0.5
+    },
+
+    {
+      "camera_id": 5,
+      "camera_name": "co-op",
+      "description": "Wide camera optimized for multiplayer.",
+      "height": 40,
+      "distance": 50,
+      "angle": 15,
+      "zoom": 0.85,
+      "follow_speed": 0.7,
+      "rotation_speed": 0.6,
+      "dynamic_zoom": true,
+      "ball_focus_priority": 0.6
+    }
+
+  ],
+
+  "camera_behavior": {
+    "goal_event_zoom": true,
+    "corner_event_zoom": true,
+    "free_kick_focus": true,
+    "penalty_focus": true,
+    "replay_camera_switch": true
+  }
+}
