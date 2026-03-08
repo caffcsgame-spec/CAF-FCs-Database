@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+
+  "movement": {
+    "walk_speed": 4.5,
+    "jog_speed": 7.0,
+    "sprint_speed": 10.5,
+    "acceleration": 12.0,
+    "deceleration": 14.0,
+    "turning_speed": 160.0,
+    "stamina_influence": 0.8,
+    "ball_control_influence": 0.9
+  },
+
+  "dribbling": {
+    "tight_dribble_speed": 6.0,
+    "loose_dribble_speed": 8.0,
+    "dribble_accuracy": 0.85,
+    "skill_move_influence": 0.75
+  },
+
+  "jumping": {
+    "vertical_jump": 1.2,
+    "horizontal_jump": 0.5,
+    "jump_cooldown": 0.8
+  },
+
+  "tackling": {
+    "standing_tackle_speed": 0.6,
+    "sliding_tackle_distance": 1.8,
+    "tackle_success_rate": 0.7
+  },
+
+  "animations": {
+    "blend_speed": 5.0,
+    "root_motion_enabled": true
+  }
+}
