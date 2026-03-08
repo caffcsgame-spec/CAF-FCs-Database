@@ -1,0 +1,48 @@
+{
+  "base_ambience": {
+    "light": "base_ambience/light_cheer.mp3",
+    "medium": "base_ambience/medium_cheer.mp3",
+    "intense": "base_ambience/intense_cheer.mp3"
+  },
+  "event_reactions": {
+    "goal": {
+      "small": "goal_reaction/small_goal.mp3",
+      "normal": "goal_reaction/normal_goal.mp3",
+      "amazing": "goal_reaction/amazing_goal.mp3"
+    },
+    "penalty": {
+      "goal": "penalty_reaction/penalty_goal.mp3",
+      "miss": "penalty_reaction/penalty_miss.mp3"
+    },
+    "foul": {
+      "minor": "foul_reaction/minor_foul.mp3",
+      "serious": "foul_reaction/serious_foul.mp3"
+    },
+    "corner": {
+      "normal": "corner_reaction/normal_corner.mp3",
+      "danger": "corner_reaction/danger_corner.mp3"
+    },
+    "skill_move": {
+      "dribble": "skill_move_reaction/dribble_success.mp3",
+      "nutmeg": "skill_move_reaction/nutmeg.mp3",
+      "fancy": "skill_move_reaction/fancy_move.mp3"
+    }
+  },
+  "random_chatter": [
+    "random_chatter/crowd_talk_1.mp3",
+    "random_chatter/crowd_talk_2.mp3",
+    "random_chatter/crowd_talk_3.mp3"
+  ],
+  "parameters": {
+    "volume_range": [0.7, 1.0],
+    "pitch_variation": [0.95, 1.05],
+    "spatial_blend": 0.8,
+    "reaction_delay_ms": [100, 500]
+  },
+  "logic": {
+    "base_ambience_play": "always",
+    "event_trigger_play": "play matching event_reaction audio dynamically",
+    "random_chatter_play": "trigger randomly every 10-30 seconds",
+    "stacking": "if multiple events happen at once, priority to goals > penalties > skill_moves > fouls > corners"
+  }
+}
