@@ -1,0 +1,42 @@
+{
+  "version": "1.0",
+
+  "general": {
+    "standing_tackle_success_base": 0.75,
+    "sliding_tackle_success_base": 0.70,
+    "tackle_distance_max": 1.8,
+    "player_pressure_influence": 0.8,
+    "stamina_influence": 0.85
+  },
+
+  "tackle_types": {
+    "standing_tackle": {
+      "speed": 0.6,
+      "accuracy": 0.78,
+      "ball_win_chance": 0.75,
+      "foul_risk": 0.05
+    },
+    "sliding_tackle": {
+      "speed": 1.8,
+      "accuracy": 0.70,
+      "ball_win_chance": 0.65,
+      "foul_risk": 0.15
+    },
+    "press": {
+      "pressure_speed": 0.5,
+      "accuracy_influence": 0.6,
+      "stamina_cost": 0.08
+    }
+  },
+
+  "environment_effects": {
+    "wet_pitch_sliding_modifier": 0.9,
+    "mud_pitch_sliding_modifier": 0.85
+  },
+
+  "player_attributes_influence": {
+    "defending_stat_weight": 0.8,
+    "physical_stat_weight": 0.75,
+    "stamina_influence": 0.8
+  }
+}
