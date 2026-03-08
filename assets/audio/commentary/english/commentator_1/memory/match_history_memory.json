@@ -1,0 +1,19 @@
+{
+  "recent_win": [
+    "{team_name} won their last match convincingly.",
+    "{team_name} come into this match with confidence."
+  ],
+
+  "recent_loss": [
+    "{team_name} will want to bounce back after their last defeat."
+  ],
+
+  "rivalry_match": [
+    "These two teams have a fierce rivalry.",
+    "Matches between these teams are always intense."
+  ],
+
+  "rematch": [
+    "This is a rematch from their previous encounter."
+  ]
+}
