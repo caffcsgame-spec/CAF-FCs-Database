@@ -1,0 +1,57 @@
+{
+  "version": "1.2",
+
+  "currency": {
+    "name": "CAF Coins",
+    "abbreviation": "CC",
+    "icon_path": "assets/ui/icons/cc_icon.png"
+  },
+
+  "match_settings": {
+    "duration_minutes": 12,
+    "allow_custom_duration": true,
+    "half_time_minutes": 6,
+    "weather_conditions": ["sunny", "rainy", "cloudy"],
+    "stadium_randomization": true,
+    "crowd_size_percentage": 100,
+    "difficulty_levels": ["easy", "normal", "hard", "legendary"],
+    "player_selected_difficulty": "normal"
+  },
+
+  "team_selection": {
+    "auto_select_squad": true,
+    "allow_custom_squad": true,
+    "max_players_per_team": 11,
+    "allow_custom_kit": true,
+    "allow_custom_formation": true
+  },
+
+  "gameplay": {
+    "injury_simulation": true,
+    "fatigue_effect": true,
+    "morale_effect": true,
+    "auto_substitutions": false,
+    "player_control_substitution": true
+  },
+
+  "controls": {
+    "gamepad_enabled": true,
+    "touch_enabled": true,
+    "custom_mapping": true
+  },
+
+  "scoring": {
+    "goal_value": 1,
+    "penalty_value": 1,
+    "own_goal_value": -1,
+    "currency_reward_per_goal": 500,
+    "currency_reward_per_win": 2000,
+    "currency_penalty_per_loss": 500,
+    "currency": "CC"
+  },
+
+  "achievements": {
+    "quick_match_wins": true,
+    "top_scorer_award": true
+  }
+}
