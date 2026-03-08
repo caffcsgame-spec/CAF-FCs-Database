@@ -1,0 +1,141 @@
+{
+  "audio_settings": {
+    "master_volume": {
+      "value": 100,
+      "range": [0, 100]
+    },
+
+    "music_volume": {
+      "value": 70,
+      "range": [0, 100]
+    },
+
+    "commentary_volume": {
+      "value": 85,
+      "range": [0, 100]
+    },
+
+    "stadium_crowd_volume": {
+      "value": 90,
+      "range": [0, 100]
+    },
+
+    "match_sfx_volume": {
+      "value": 95,
+      "range": [0, 100]
+    },
+
+    "menu_sfx_volume": {
+      "value": 80,
+      "range": [0, 100]
+    }
+  },
+
+  "commentary_system": {
+    "enabled": true,
+    "language": "auto",
+    "style": "dynamic",
+
+    "commentary_frequency": {
+      "mode": "adaptive",
+      "levels": {
+        "low": 30,
+        "normal": 60,
+        "high": 90
+      }
+    },
+
+    "context_reactions": {
+      "goals": true,
+      "big_misses": true,
+      "cards": true,
+      "injuries": true,
+      "derby_matches": true,
+      "tournament_finals": true
+    }
+  },
+
+  "stadium_atmosphere": {
+    "dynamic_crowd": true,
+    "crowd_reaction_intensity": "adaptive",
+
+    "reaction_events": {
+      "goal": 100,
+      "near_miss": 70,
+      "foul": 60,
+      "card": 80,
+      "penalty": 95,
+      "final_whistle": 90
+    },
+
+    "home_advantage_crowd_boost": true,
+
+    "crowd_layers": {
+      "chants": true,
+      "drums": true,
+      "whistles": true,
+      "celebrations": true
+    }
+  },
+
+  "match_audio_engine": {
+    "dynamic_mixing": true,
+    "distance_audio_scaling": true,
+
+    "ball_sounds": {
+      "kick": true,
+      "net_hit": true,
+      "post_hit": true,
+      "ground_bounce": true
+    },
+
+    "player_sounds": {
+      "footsteps": true,
+      "tackles": true,
+      "shouts": true
+    },
+
+    "environment_sounds": {
+      "wind": true,
+      "rain": true,
+      "stadium_echo": true
+    }
+  },
+
+  "device_audio_optimization": {
+    "auto_optimize": true,
+
+    "profiles": {
+      "low_end_device": {
+        "audio_channels": 16,
+        "crowd_layers": 1,
+        "commentary_quality": "compressed"
+      },
+
+      "mid_range_device": {
+        "audio_channels": 32,
+        "crowd_layers": 2,
+        "commentary_quality": "standard"
+      },
+
+      "high_end_device": {
+        "audio_channels": 64,
+        "crowd_layers": 4,
+        "commentary_quality": "high"
+      }
+    }
+  },
+
+  "headphone_mode": {
+    "enabled": false,
+    "spatial_audio": true,
+    "3d_stadium_effect": true
+  },
+
+  "background_music": {
+    "menu_music": true,
+    "event_music": true,
+    "victory_music": true,
+    "defeat_music": true
+  }
+}
