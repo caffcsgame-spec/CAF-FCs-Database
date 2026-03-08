@@ -1,0 +1,21 @@
+{
+  "hat_trick_alert": [
+    "{player_name} is one goal away from a hat trick!",
+    "All eyes are on {player_name} now."
+  ],
+
+  "two_goals": [
+    "{player_name} has scored twice today!",
+    "That is another goal for {player_name}!"
+  ],
+
+  "dominant_player": [
+    "{player_name} is dominating the midfield today.",
+    "Everything seems to go through {player_name}."
+  ],
+
+  "quiet_player": [
+    "It has been a quiet match for {player_name}.",
+    "{player_name} is yet to make a big impact."
+  ]
+}
