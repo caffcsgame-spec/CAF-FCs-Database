@@ -1,0 +1,65 @@
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class CAF_FCS_InputManager : MonoBehaviour
+{
+    public static CAF_FCS_InputManager Instance;
+
+    [Header("Player Settings")]
+    public PlayerControls controls; // Generated from Unity Input System
+    public bool useCustomMapping = false;
+
+    private void Awake()
+    {
+        if(Instance == null) Instance = this;
+        controls = new PlayerControls();
+    }
+
+    private void OnEnable()
+    {
+        controls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Disable();
+    }
+
+    // Movement
+    public Vector2 GetMovement()
+    {
+        if(useCustomMapping)
+            return new Vector2(
+                controls.Custom.Move.ReadValue<Vector2>().x,
+                controls.Custom.Move.ReadValue<Vector2>().y
+            );
+        else
+            return controls.Default.Move.ReadValue<Vector2>();
+    }
+
+    // Camera
+    public Vector2 GetCamera()
+    {
+        if(useCustomMapping)
+            return controls.Custom.Camera.ReadValue<Vector2>();
+        else
+            return controls.Default.Camera.ReadValue<Vector2>();
+    }
+
+    // Actions
+    public bool Pass() => controls.Default.Pass.triggered || controls.Custom.Pass.triggered;
+    public bool Shoot() => controls.Default.Shoot.triggered || controls.Custom.Shoot.triggered;
+    public bool Cross() => controls.Default.Cross.triggered || controls.Custom.Cross.triggered;
+    public bool Dribble() => controls.Default.Dribble.triggered || controls.Custom.Dribble.triggered;
+    public bool Tackle() => controls.Default.Tackle.triggered || controls.Custom.Tackle.triggered;
+
+    // Combo/Skill
+    public bool SkillShot() => controls.Custom.SkillShot.triggered;
+    public bool SkillPass() => controls.Custom.SkillPass.triggered;
+
+    // Gamepad triggers
+    public float Sprint() => controls.Default.Sprint.ReadValue<float>();
+    public float ProtectBall() => controls.Default.Protect.ReadValue<float>();
+
+    // Touch screen inputs can be mapped to these
+}
