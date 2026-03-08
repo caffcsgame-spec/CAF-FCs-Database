@@ -1,0 +1,44 @@
+{
+  "version": "1.0",
+
+  "ball_properties": {
+    "mass": 0.43,
+    "radius": 0.11,
+    "air_resistance": 0.015,
+    "spin_influence": 0.65
+  },
+
+  "movement": {
+    "ground_friction": 0.42,
+    "rolling_resistance": 0.35,
+    "bounce_damping": 0.55,
+    "max_ball_speed": 38
+  },
+
+  "passing": {
+    "short_pass_speed": 14,
+    "long_pass_speed": 22,
+    "through_ball_speed": 20,
+    "chip_pass_speed": 16,
+    "pass_accuracy_influence": 0.7
+  },
+
+  "shooting": {
+    "normal_shot_power": 28,
+    "hard_shot_power": 34,
+    "chip_shot_power": 18,
+    "curve_shot_spin": 0.75,
+    "finesse_shot_spin": 0.85
+  },
+
+  "bounce_behavior": {
+    "grass_bounce": 0.55,
+    "wet_grass_bounce": 0.48,
+    "header_bounce": 0.60
+  },
+
+  "environment_effects": {
+    "rain_friction_modifier": 0.9,
+    "wind_influence": 0.25
+  }
+}
