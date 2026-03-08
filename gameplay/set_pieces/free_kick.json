@@ -1,0 +1,50 @@
+{
+  "version": "1.0",
+
+  "general": {
+    "max_distance": 30.0,
+    "shot_accuracy_base": 0.85,
+    "shot_power_base": 28.0,
+    "curve_base": 0.15,
+    "goalkeeper_pressure_influence": 0.7,
+    "player_stamina_influence": 0.8
+  },
+
+  "kick_types": {
+    "direct_shot": {
+      "speed": 30.0,
+      "accuracy": 0.85,
+      "curve": 0.2,
+      "height_modifier": 1.0
+    },
+    "indirect_pass": {
+      "speed": 22.0,
+      "accuracy": 0.9,
+      "curve": 0.05,
+      "arc_height": 1.5
+    },
+    "chip_shot": {
+      "speed": 18.0,
+      "accuracy": 0.8,
+      "curve": 0.25,
+      "arc_height": 3.0
+    },
+    "finesse_shot": {
+      "speed": 26.0,
+      "accuracy": 0.88,
+      "curve": 0.3,
+      "spin_influence": 0.9
+    }
+  },
+
+  "player_attributes_influence": {
+    "shooting_stat_weight": 0.8,
+    "free_kick_stat_weight": 0.9,
+    "stamina_influence": 0.8
+  },
+
+  "environment_effects": {
+    "wind_influence": 0.15,
+    "wet_pitch_modifier": 0.9
+  }
+}
