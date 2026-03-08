@@ -1,0 +1,20 @@
+{
+  "late_game_drama": {
+    "minute_threshold": 80,
+
+    "lines": [
+      "We are entering the final moments of the match.",
+      "Time is running out here."
+    ]
+  },
+
+  "equalizer_moment": [
+    "What a response!",
+    "The match is level again!"
+  ],
+
+  "comeback": [
+    "What a comeback this is!",
+    "{team_name} have turned the game around!"
+  ]
+}
