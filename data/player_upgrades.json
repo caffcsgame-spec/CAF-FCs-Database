@@ -1,0 +1,46 @@
+{
+  "skill_tree": {
+    "offense": [
+      {"level": 1, "stat": "shooting", "increase": 2, "xp_required": 100},
+      {"level": 2, "stat": "dribbling", "increase": 3, "xp_required": 200},
+      {"level": 3, "stat": "pace", "increase": 2, "xp_required": 400}
+    ],
+    "defense": [
+      {"level": 1, "stat": "defense", "increase": 2, "xp_required": 100},
+      {"level": 2, "stat": "tackling", "increase": 3, "xp_required": 250},
+      {"level": 3, "stat": "physical", "increase": 2, "xp_required": 400}
+    ],
+    "physical": [
+      {"level": 1, "stat": "stamina", "increase": 5, "xp_required": 100},
+      {"level": 2, "stat": "strength", "increase": 3, "xp_required": 200},
+      {"level": 3, "stat": "agility", "increase": 2, "xp_required": 400}
+    ],
+    "special_moves": [
+      {"level": 1, "move": "Curve Master", "xp_required": 300},
+      {"level": 2, "move": "Long Shot Specialist", "xp_required": 500},
+      {"level": 3, "move": "Dribble Wizard", "xp_required": 700}
+    ]
+  },
+  "position_xp": {
+    "ST": {"shooting": 0, "pace": 0, "dribbling": 0},
+    "CM": {"passing": 0, "dribbling": 0, "defense": 0},
+    "CB": {"defense": 0, "physical": 0, "tackling": 0},
+    "GK": {"goalkeeping": 0, "reflexes": 0, "positioning": 0}
+  },
+  "squad_synergy": {
+    "teammates_played_together": 0,
+    "synergy_bonus": {
+      "pace": 0,
+      "shooting": 0,
+      "passing": 0,
+      "defense": 0
+    }
+  },
+  "upgrade_cost": {
+    "stat_point": 50,
+    "skill_point": 100,
+    "special_move_unlock": 300
+  },
+  "max_level_per_stat": 10,
+  "max_level_per_special_move": 3
+}
