@@ -1,0 +1,16 @@
+{
+  "recent_win": [
+    "Timu ya {team_name} ilishinda mechi yao ya mwisho kwa uhakika.",
+    "Wanaingia kwenye mechi hii kwa kujiamini."
+  ],
+  "recent_loss": [
+    "{team_name} wanataka kujirekebisha baada ya kupoteza mechi iliyopita."
+  ],
+  "rivalry_match": [
+    "Hizi timu zina ushindani mkubwa sana.",
+    "Mechi kati ya hizi timu daima ni kali."
+  ],
+  "rematch": [
+    "Hii ni mechi ya kurejelea kutoka kwenye mchezo uliopita."
+  ]
+}
