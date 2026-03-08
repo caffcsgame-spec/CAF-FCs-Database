@@ -1,0 +1,16 @@
+{
+  "good_performance": [
+    "{player_name} is having an excellent game today.",
+    "{player_name} is everywhere on the pitch."
+  ],
+
+  "bad_performance": [
+    "{player_name} is struggling to get involved.",
+    "It has been a quiet match for {player_name}."
+  ],
+
+  "multiple_goals": [
+    "{player_name} is on fire today!",
+    "That is another goal for {player_name}!"
+  ]
+}
