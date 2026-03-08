@@ -1,1 +1,126 @@
+{
+  "version": "1.0",
+  "team_ai_profiles": [
 
+    {
+      "style_id": 1,
+      "style_name": "balanced",
+      "description": "Balanced attacking and defending play.",
+      "attack": {
+        "build_up_speed": 0.6,
+        "passing_risk": 0.5,
+        "through_ball_frequency": 0.4,
+        "cross_frequency": 0.4,
+        "shot_frequency": 0.5,
+        "dribble_frequency": 0.4
+      },
+      "defense": {
+        "pressing_intensity": 0.5,
+        "line_height": 0.5,
+        "tackle_aggressiveness": 0.5,
+        "interception_attempts": 0.5
+      },
+      "transition": {
+        "counter_attack_speed": 0.5,
+        "players_join_attack": 0.5
+      }
+    },
+
+    {
+      "style_id": 2,
+      "style_name": "possession",
+      "description": "Focus on ball control and short passing.",
+      "attack": {
+        "build_up_speed": 0.4,
+        "passing_risk": 0.3,
+        "through_ball_frequency": 0.3,
+        "cross_frequency": 0.2,
+        "shot_frequency": 0.4,
+        "dribble_frequency": 0.5
+      },
+      "defense": {
+        "pressing_intensity": 0.6,
+        "line_height": 0.6,
+        "tackle_aggressiveness": 0.4,
+        "interception_attempts": 0.6
+      },
+      "transition": {
+        "counter_attack_speed": 0.4,
+        "players_join_attack": 0.6
+      }
+    },
+
+    {
+      "style_id": 3,
+      "style_name": "counter_attack",
+      "description": "Defend deep then attack quickly.",
+      "attack": {
+        "build_up_speed": 0.8,
+        "passing_risk": 0.6,
+        "through_ball_frequency": 0.7,
+        "cross_frequency": 0.5,
+        "shot_frequency": 0.7,
+        "dribble_frequency": 0.4
+      },
+      "defense": {
+        "pressing_intensity": 0.3,
+        "line_height": 0.3,
+        "tackle_aggressiveness": 0.6,
+        "interception_attempts": 0.5
+      },
+      "transition": {
+        "counter_attack_speed": 0.9,
+        "players_join_attack": 0.7
+      }
+    },
+
+    {
+      "style_id": 4,
+      "style_name": "high_press",
+      "description": "Aggressive pressing high up the pitch.",
+      "attack": {
+        "build_up_speed": 0.7,
+        "passing_risk": 0.6,
+        "through_ball_frequency": 0.5,
+        "cross_frequency": 0.4,
+        "shot_frequency": 0.6,
+        "dribble_frequency": 0.5
+      },
+      "defense": {
+        "pressing_intensity": 0.9,
+        "line_height": 0.8,
+        "tackle_aggressiveness": 0.8,
+        "interception_attempts": 0.7
+      },
+      "transition": {
+        "counter_attack_speed": 0.7,
+        "players_join_attack": 0.6
+      }
+    },
+
+    {
+      "style_id": 5,
+      "style_name": "defensive",
+      "description": "Deep defending and safe passing.",
+      "attack": {
+        "build_up_speed": 0.3,
+        "passing_risk": 0.2,
+        "through_ball_frequency": 0.2,
+        "cross_frequency": 0.3,
+        "shot_frequency": 0.3,
+        "dribble_frequency": 0.2
+      },
+      "defense": {
+        "pressing_intensity": 0.4,
+        "line_height": 0.2,
+        "tackle_aggressiveness": 0.5,
+        "interception_attempts": 0.6
+      },
+      "transition": {
+        "counter_attack_speed": 0.4,
+        "players_join_attack": 0.3
+      }
+    }
+
+  ]
+}
