@@ -1,1 +1,134 @@
+{
+  "version": "1.0",
+  "goalkeeper_ai_profiles": [
 
+    {
+      "style_id": 1,
+      "style_name": "balanced_goalkeeper",
+      "positioning": {
+        "goal_line_preference": 0.5,
+        "sweeper_tendency": 0.5,
+        "angle_adjustment_speed": 0.7
+      },
+      "shot_handling": {
+        "save_reaction": 0.8,
+        "dive_speed": 0.75,
+        "catch_probability": 0.6,
+        "punch_probability": 0.4
+      },
+      "decision_making": {
+        "rush_out_frequency": 0.5,
+        "one_on_one_aggressiveness": 0.6,
+        "anticipation": 0.7
+      },
+      "distribution": {
+        "short_pass_frequency": 0.6,
+        "long_kick_frequency": 0.4,
+        "throw_frequency": 0.5
+      },
+      "penalty_behavior": {
+        "dive_early_probability": 0.5,
+        "dive_left_probability": 0.5,
+        "dive_right_probability": 0.5,
+        "stay_center_probability": 0.3
+      }
+    },
+
+    {
+      "style_id": 2,
+      "style_name": "sweeper_keeper",
+      "positioning": {
+        "goal_line_preference": 0.3,
+        "sweeper_tendency": 0.9,
+        "angle_adjustment_speed": 0.85
+      },
+      "shot_handling": {
+        "save_reaction": 0.85,
+        "dive_speed": 0.8,
+        "catch_probability": 0.55,
+        "punch_probability": 0.45
+      },
+      "decision_making": {
+        "rush_out_frequency": 0.85,
+        "one_on_one_aggressiveness": 0.85,
+        "anticipation": 0.85
+      },
+      "distribution": {
+        "short_pass_frequency": 0.8,
+        "long_kick_frequency": 0.2,
+        "throw_frequency": 0.7
+      },
+      "penalty_behavior": {
+        "dive_early_probability": 0.6,
+        "dive_left_probability": 0.5,
+        "dive_right_probability": 0.5,
+        "stay_center_probability": 0.2
+      }
+    },
+
+    {
+      "style_id": 3,
+      "style_name": "shot_stopper",
+      "positioning": {
+        "goal_line_preference": 0.8,
+        "sweeper_tendency": 0.2,
+        "angle_adjustment_speed": 0.7
+      },
+      "shot_handling": {
+        "save_reaction": 0.95,
+        "dive_speed": 0.9,
+        "catch_probability": 0.7,
+        "punch_probability": 0.3
+      },
+      "decision_making": {
+        "rush_out_frequency": 0.4,
+        "one_on_one_aggressiveness": 0.6,
+        "anticipation": 0.8
+      },
+      "distribution": {
+        "short_pass_frequency": 0.4,
+        "long_kick_frequency": 0.6,
+        "throw_frequency": 0.4
+      },
+      "penalty_behavior": {
+        "dive_early_probability": 0.7,
+        "dive_left_probability": 0.5,
+        "dive_right_probability": 0.5,
+        "stay_center_probability": 0.1
+      }
+    },
+
+    {
+      "style_id": 4,
+      "style_name": "safe_goalkeeper",
+      "positioning": {
+        "goal_line_preference": 0.7,
+        "sweeper_tendency": 0.3,
+        "angle_adjustment_speed": 0.65
+      },
+      "shot_handling": {
+        "save_reaction": 0.75,
+        "dive_speed": 0.7,
+        "catch_probability": 0.75,
+        "punch_probability": 0.25
+      },
+      "decision_making": {
+        "rush_out_frequency": 0.35,
+        "one_on_one_aggressiveness": 0.5,
+        "anticipation": 0.65
+      },
+      "distribution": {
+        "short_pass_frequency": 0.5,
+        "long_kick_frequency": 0.5,
+        "throw_frequency": 0.5
+      },
+      "penalty_behavior": {
+        "dive_early_probability": 0.5,
+        "dive_left_probability": 0.5,
+        "dive_right_probability": 0.5,
+        "stay_center_probability": 0.25
+      }
+    }
+
+  ]
+}
