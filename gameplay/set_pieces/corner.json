@@ -1,0 +1,50 @@
+{
+  "version": "1.0",
+
+  "general": {
+    "max_distance": 25.0,
+    "cross_accuracy_base": 0.82,
+    "cross_speed_base": 20.0,
+    "curve_base": 0.15,
+    "goalkeeper_pressure_influence": 0.7,
+    "player_stamina_influence": 0.8
+  },
+
+  "corner_types": {
+    "short_corner": {
+      "speed": 18.0,
+      "accuracy": 0.85,
+      "curve": 0.05,
+      "arc_height": 1.5
+    },
+    "long_corner": {
+      "speed": 22.0,
+      "accuracy": 0.78,
+      "curve": 0.1,
+      "arc_height": 2.5
+    },
+    "inswinger": {
+      "speed": 20.0,
+      "accuracy": 0.80,
+      "curve": 0.25,
+      "arc_height": 3.0
+    },
+    "outswinger": {
+      "speed": 20.0,
+      "accuracy": 0.80,
+      "curve": -0.25,
+      "arc_height": 3.0
+    }
+  },
+
+  "player_attributes_influence": {
+    "crossing_stat_weight": 0.85,
+    "vision_stat_weight": 0.8,
+    "stamina_influence": 0.8
+  },
+
+  "environment_effects": {
+    "wind_influence": 0.15,
+    "wet_pitch_modifier": 0.9
+  }
+}
