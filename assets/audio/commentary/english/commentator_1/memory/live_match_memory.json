@@ -1,0 +1,20 @@
+{
+  "missed_then_scored": [
+    "{player_name} missed earlier, but this time he finds the net!",
+    "He couldn't score before, but {player_name} makes it count now!"
+  ],
+
+  "goalkeeper_redemption": [
+    "He made a mistake earlier, but that is a fantastic save now!",
+    "The goalkeeper redeems himself with that stop."
+  ],
+
+  "repeat_attack": [
+    "{team_name} are attacking again and again.",
+    "Another dangerous move from {team_name}."
+  ],
+
+  "revenge_tackle": [
+    "{player_name} was beaten earlier, but he wins the ball back this time."
+  ]
+}
