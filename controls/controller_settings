@@ -1,1 +1,45 @@
-
+{
+  "version": "1.0",
+  "platform": "cross-platform",
+  "default_mapping": "gamepad & touchscreen",
+  "custom_mapping_enabled": true,
+  "gamepad": {
+    "left_stick": "movement",
+    "right_stick": "skills",
+    "dpad": "movement",
+    "buttons": {
+      "X": ["short_pass","standing_tackle","press"],
+      "Rectangle": ["shoot"],
+      "Triangle": ["through_ball","GK_rush"],
+      "Circle": ["long_pass","cross","sliding_tackle"],
+      "L1": ["sprint"],
+      "L2": ["protect_ball"],
+      "R1": ["teammate_switch"],
+      "R2": ["finesse_shot","curve_short"],
+      "Select": ["menu_select"],
+      "Start": ["pause_menu"]
+    }
+  },
+  "touch": {
+    "joystick": {"movement": "bottom_left", "camera": "bottom_right"},
+    "buttons": {
+      "pass": {
+        "tap": "short_pass",
+        "tap_hold": "short_pass_hold",
+        "tap_swipe_up": "long_pass_cross",
+        "tap_swipe_right": "through_ball",
+        "double_tap": "skill_pass"
+      },
+      "shoot": {
+        "tap": "normal_shot",
+        "tap_hold": "normal_shot_hold",
+        "tap_swipe_up": "chip_shot",
+        "tap_swipe_down": "curve_shot",
+        "tap_swipe_left": "short_trick",
+        "tap_swipe_right": "hard_shot",
+        "double_tap": "skill_shot"
+      },
+      "press": {"tap": "standing_tackle", "tap_hold": "sprint"}
+    }
+  }
+}
