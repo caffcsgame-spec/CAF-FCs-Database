@@ -1,1 +1,87 @@
+{
+  "version": "1.0",
+  "referee_profiles": [
 
+    {
+      "referee_id": 1,
+      "referee_style": "balanced",
+      "description": "Balanced referee with moderate foul detection and discipline.",
+      "foul_detection": {
+        "sensitivity": 0.6,
+        "handball_detection": 0.6,
+        "sliding_tackle_strictness": 0.6
+      },
+      "discipline": {
+        "yellow_card_probability": 0.6,
+        "red_card_probability": 0.4
+      },
+      "penalty_decision": {
+        "box_foul_sensitivity": 0.7,
+        "var_review_probability": 0.5
+      },
+      "advantage_rule": {
+        "advantage_use_frequency": 0.6,
+        "advantage_duration_seconds": 3
+      },
+      "match_management": {
+        "injury_stop_probability": 0.7,
+        "added_time_accuracy": 0.8
+      }
+    },
+
+    {
+      "referee_id": 2,
+      "referee_style": "strict",
+      "description": "Strict referee who whistles more fouls and gives more cards.",
+      "foul_detection": {
+        "sensitivity": 0.85,
+        "handball_detection": 0.8,
+        "sliding_tackle_strictness": 0.85
+      },
+      "discipline": {
+        "yellow_card_probability": 0.8,
+        "red_card_probability": 0.6
+      },
+      "penalty_decision": {
+        "box_foul_sensitivity": 0.85,
+        "var_review_probability": 0.6
+      },
+      "advantage_rule": {
+        "advantage_use_frequency": 0.4,
+        "advantage_duration_seconds": 2
+      },
+      "match_management": {
+        "injury_stop_probability": 0.8,
+        "added_time_accuracy": 0.9
+      }
+    },
+
+    {
+      "referee_id": 3,
+      "referee_style": "lenient",
+      "description": "Referee allows more physical play with fewer fouls.",
+      "foul_detection": {
+        "sensitivity": 0.4,
+        "handball_detection": 0.5,
+        "sliding_tackle_strictness": 0.45
+      },
+      "discipline": {
+        "yellow_card_probability": 0.4,
+        "red_card_probability": 0.2
+      },
+      "penalty_decision": {
+        "box_foul_sensitivity": 0.5,
+        "var_review_probability": 0.3
+      },
+      "advantage_rule": {
+        "advantage_use_frequency": 0.8,
+        "advantage_duration_seconds": 4
+      },
+      "match_management": {
+        "injury_stop_probability": 0.6,
+        "added_time_accuracy": 0.7
+      }
+    }
+
+  ]
+}
