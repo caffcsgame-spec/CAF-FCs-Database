@@ -1,0 +1,132 @@
+using System;
+using UnityEngine;
+
+[Serializable]
+public class PlayerStats
+{
+    public int pace;
+    public int shooting;
+    public int passing;
+    public int dribbling;
+    public int defense;
+    public int physical;
+}
+
+[Serializable]
+public class ScoutedPlayer
+{
+    public int player_id;
+    public int team_id;
+    public string name;
+    public int country_id;
+    public int age;
+    public string position;
+    public int jersey_number;
+    public int overall_rating;
+    public string card_type;
+    public int card_id;
+    public PlayerStats stats;
+}
+
+public class ScoutingPlayerGenerator : MonoBehaviour
+{
+    private int playerCounter = 1000;
+
+    string[] positions =
+    {
+        "GK","CB","LB","RB","CDM","CM","CAM","LW","RW","ST"
+    };
+
+    string[] names =
+    {
+        "Abdul","Musa","Kofi","Bakari","Youssef","Diallo",
+        "Kamara","Ndiaye","Mensah","Banda","Okoro",
+        "Zuma","Adebayo","Traore","Mabena"
+    };
+
+    public ScoutedPlayer GeneratePlayer()
+    {
+        ScoutedPlayer player = new ScoutedPlayer();
+
+        player.player_id = playerCounter++;
+        player.team_id = 0;
+
+        player.name =
+            names[UnityEngine.Random.Range(0, names.Length)] +
+            " " +
+            names[UnityEngine.Random.Range(0, names.Length)];
+
+        player.country_id = UnityEngine.Random.Range(1, 55);
+
+        player.age = UnityEngine.Random.Range(18, 30);
+
+        player.position =
+            positions[UnityEngine.Random.Range(0, positions.Length)];
+
+        player.jersey_number = UnityEngine.Random.Range(1, 99);
+
+        player.overall_rating = UnityEngine.Random.Range(60, 96);
+
+        player.card_type = GetCardType(player.overall_rating);
+
+        player.card_id = GenerateCardID(player.card_type);
+
+        player.stats = GenerateStats(player.overall_rating);
+
+        return player;
+    }
+
+    string GetCardType(int rating)
+    {
+        if (rating >= 90)
+            return "Epic";
+
+        if (rating >= 80)
+            return "Rare";
+
+        if (rating >= 70)
+            return "Common";
+
+        return "Base";
+    }
+
+    int GenerateCardID(string type)
+    {
+        switch (type)
+        {
+            case "Epic":
+                return 4000 + UnityEngine.Random.Range(1, 100);
+
+            case "Rare":
+                return 3000 + UnityEngine.Random.Range(1, 100);
+
+            case "Common":
+                return 2000 + UnityEngine.Random.Range(1, 100);
+
+            default:
+                return 1000 + UnityEngine.Random.Range(1, 100);
+        }
+    }
+
+    PlayerStats GenerateStats(int rating)
+    {
+        PlayerStats stats = new PlayerStats();
+
+        stats.pace = RandomStat(rating);
+        stats.shooting = RandomStat(rating);
+        stats.passing = RandomStat(rating);
+        stats.dribbling = RandomStat(rating);
+        stats.defense = RandomStat(rating);
+        stats.physical = RandomStat(rating);
+
+        return stats;
+    }
+
+    int RandomStat(int overall)
+    {
+        int min = overall - 10;
+        int max = overall + 5;
+
+        return UnityEngine.Random.Range(min, max);
+    }
+}
