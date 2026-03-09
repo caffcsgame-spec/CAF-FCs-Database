@@ -1,109 +1,45 @@
 {
-  "menu_title": "Scout Players",
-  "layout": {
-    "canvas_size": {
-      "width": 1920,
-      "height": 1080
-    },
-    "card_preview": {
-      "position": { "x": 960, "y": 540 },
-      "size": { "width": 600, "height": 850 },
-      "text_fit": {
-        "enable_auto_scale": true,
-        "max_font_size": 36,
-        "min_font_size": 18,
-        "line_wrap": true,
-        "padding": 10
-      }
-    },
-    "buttons": {
-      "scout_next": {
-        "text": "Next Scout",
-        "position": { "x": 1700, "y": 100 },
-        "size": { "width": 200, "height": 80 },
-        "color": "#FFD700",
-        "action": "TriggerNextScout"
-      },
-      "view_details": {
-        "text": "View Details",
-        "position": { "x": 1700, "y": 200 },
-        "size": { "width": 200, "height": 80 },
-        "color": "#00BFFF",
-        "action": "OpenPlayerDetails"
-      },
-      "close_menu": {
-        "text": "Close",
-        "position": { "x": 1700, "y": 300 },
-        "size": { "width": 200, "height": 80 },
-        "color": "#FF4500",
-        "action": "CloseMenu"
-      }
-    }
-  },
-  "card_text_elements": {
-    "player_name": {
-      "relative_position": { "x": 0.5, "y": 0.9 },
-      "font_style": "Bold",
-      "color": "#FFFFFF",
-      "shadow": true
-    },
-    "age_position": {
-      "relative_position": { "x": 0.1, "y": 0.85 },
-      "font_style": "Regular",
-      "color": "#FFFF00"
-    },
-    "overall_rating": {
-      "relative_position": { "x": 0.9, "y": 0.85 },
-      "font_style": "Bold",
-      "color": "#00FF00"
-    },
-    "potential_rating": {
-      "relative_position": { "x": 0.9, "y": 0.8 },
-      "font_style": "BoldItalic",
-      "color": "#1E90FF"
-    },
-    "position": {
-      "relative_position": { "x": 0.1, "y": 0.8 },
-      "font_style": "Italic",
-      "color": "#FF69B4"
-    },
-    "skill_tree": {
-      "relative_position": { "x": 0.5, "y": 0.7 },
-      "font_style": "Regular",
-      "color": "#FFFFFF",
-      "auto_fit": true,
-      "max_lines": 5
-    },
-    "special_moves": {
-      "relative_position": { "x": 0.5, "y": 0.6 },
-      "font_style": "Regular",
-      "color": "#FFD700",
-      "auto_fit": true,
-      "max_lines": 3
-    }
-  },
-  "scrollable_list": {
-    "position": { "x": 300, "y": 100 },
-    "size": { "width": 400, "height": 800 },
-    "item_height": 150,
-    "item_spacing": 10,
-    "max_visible_items": 5,
-    "action_on_click": "PreviewPlayerCard"
-  },
-  "dynamic_text_fit_logic": {
-    "enable": true,
-    "min_font_size": 16,
-    "max_font_size": 36,
-    "fit_to_card_bounds": true,
-    "adaptive_line_spacing": true
-  },
+  "menu_title": "Scouting",
   "background": "CAF FCs/assets/ui/backgrounds/scout_bg.png",
-  "sounds": {
-    "button_click": "CAF FCs/assets/audio/ui/click.mp3",
-    "reveal_player": "CAF FCs/assets/audio/ui/reveal.mp3"
+
+  "ui_elements": {
+
+    "scout_button": {
+      "label": "Scout Player",
+      "position": { "x": 800, "y": 200 },
+      "size": { "width": 300, "height": 80 },
+      "script_link": "CAF FCs/modes/scouting/scouting_cooldown_ui.cs",
+      "interactable": true
+    },
+
+    "cooldown_text": {
+      "position": { "x": 800, "y": 300 },
+      "font_size": 24,
+      "color": "#FFFFFF",
+      "default_text": "Checking scouting availability..."
+    },
+
+    "player_preview_panel": {
+      "position": { "x": 400, "y": 250 },
+      "size": { "width": 350, "height": 500 },
+      "show_attributes": true,
+      "show_card_type": true,
+      "show_player_image": true
+    },
+
+    "weekly_info_text": {
+      "position": { "x": 400, "y": 750 },
+      "font_size": 20,
+      "color": "#FFD700",
+      "text": "You can scout one player every 7 days."
+    }
+
   },
+
   "parameters": {
-    "weekly_scouting_limit": 1,
-    "cooldown_days": 7
+    "auto_update_ui_interval_sec": 1,
+    "max_weekly_scout": 1,
+    "cooldown_days": 7,
+    "cooldown_display_format": "{days}d {hours}h {minutes}m {seconds}s"
   }
 }
