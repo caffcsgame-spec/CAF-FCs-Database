@@ -1,0 +1,71 @@
+{
+  "menu_title": "Transfer Market",
+  "tabs": [
+    {
+      "id": "all_players",
+      "title": "All Players",
+      "description": "View all players available for transfer",
+      "default": true
+    },
+    {
+      "id": "my_squad",
+      "title": "My Squad",
+      "description": "View your current squad and upgrade options"
+    },
+    {
+      "id": "search",
+      "title": "Search Player",
+      "description": "Search player by name, position, rating, or card type"
+    },
+    {
+      "id": "filters",
+      "title": "Filters",
+      "description": "Filter by position, rating, card type, price range, team, nationality"
+    }
+  ],
+
+  "player_card_template": {
+    "layout": "horizontal",
+    "elements": {
+      "player_image": {"path": "assets/players/faces/{player_id}.png", "size": [64, 64]},
+      "player_name": {"font_size": 18, "color": "#FFFFFF"},
+      "position": {"font_size": 14, "color": "#CCCCCC"},
+      "overall_rating": {"font_size": 16, "color": "#FFD700"},
+      "card_type": {"font_size": 14, "color": "#00FF00"},
+      "price_cc": {"font_size": 16, "color": "#FFAA00"},
+      "buy_button": {"text": "Buy", "color": "#00CCFF", "action": "purchase_player"}
+    }
+  },
+
+  "navigation": {
+    "scroll_type": "vertical",
+    "items_per_page": 10,
+    "page_buttons": true,
+    "swipe_enabled": true
+  },
+
+  "interactions": {
+    "buy_player": {
+      "confirmation_popup": true,
+      "popup_text": "Are you sure you want to buy {player_name} for {price_cc} CC?",
+      "success_message": "{player_name} has been added to your squad!",
+      "error_message": "Not enough CC to complete the purchase."
+    },
+    "view_player_details": {
+      "tap_action": "open_player_profile",
+      "long_press_action": "show_player_stats"
+    }
+  },
+
+  "analytics": {
+    "recently_viewed": true,
+    "recently_purchased": true,
+    "top_trending_players": true
+  },
+
+  "visuals": {
+    "background_image": "assets/ui/backgrounds/market_bg.png",
+    "highlight_color": "#FFD700",
+    "font_family": "Roboto-Bold"
+  }
+}
