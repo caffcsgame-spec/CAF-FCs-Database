@@ -4,99 +4,125 @@ using UnityEngine.UI;
 
 public class ScoutingCooldownUI : MonoBehaviour
 {
-    [Header("UI Elements")]
     public Button scoutButton;
     public Text cooldownText;
-    public Image buttonGlow; // Optional: glow image behind button
 
-    [Header("Cooldown Settings")]
+    [Header("Cooldown")]
     public int cooldownDays = 7;
+
+    [Header("Glow Animation")]
+    public float pulseSpeed = 2f;
+    public float scaleAmount = 0.05f;
+    public Color readyColor = new Color(1f, 0.85f, 0.2f);
+
+    private Vector3 originalScale;
+    private Color originalColor;
+
     private DateTime lastScoutTime;
     private DateTime nextAvailableTime;
 
-    [Header("Glow Animation")]
-    public float glowPulseSpeed = 2f;
-    public float maxGlowAlpha = 0.6f;
-    private Color originalGlowColor;
-
     void Start()
     {
-        originalGlowColor = buttonGlow.color;
+        originalScale = scoutButton.transform.localScale;
+        originalColor = scoutButton.image.color;
+
         LoadCooldown();
         UpdateUI();
-        InvokeRepeating("UpdateUI", 0f, 1f);
+
+        InvokeRepeating(nameof(UpdateUI), 0f, 1f);
     }
 
     void Update()
     {
         if (IsScoutingAvailable())
         {
-            AnimateGlow();
+            AnimateButton();
         }
         else
         {
-            buttonGlow.color = new Color(originalGlowColor.r, originalGlowColor.g, originalGlowColor.b, 0f);
+            scoutButton.transform.localScale = originalScale;
+            scoutButton.image.color = originalColor;
         }
     }
 
     public void OnScoutButtonPressed()
     {
-        if (IsScoutingAvailable())
-        {
-            Debug.Log("Scouting player...");
+        if (!IsScoutingAvailable())
+            return;
 
-            lastScoutTime = DateTime.UtcNow;
-            nextAvailableTime = lastScoutTime.AddDays(cooldownDays);
+        Debug.Log("Scouting player...");
 
-            SaveCooldown();
-            UpdateUI();
-        }
+        lastScoutTime = DateTime.UtcNow;
+        nextAvailableTime = lastScoutTime.AddDays(cooldownDays);
+
+        SaveCooldown();
+        UpdateUI();
     }
 
-    private bool IsScoutingAvailable()
+    bool IsScoutingAvailable()
     {
         return DateTime.UtcNow >= nextAvailableTime;
     }
 
-    private void UpdateUI()
+    void UpdateUI()
     {
         if (IsScoutingAvailable())
         {
             scoutButton.interactable = true;
-            cooldownText.text = "Scout now!";
+            cooldownText.text = "Scout Ready";
         }
         else
         {
             scoutButton.interactable = false;
-            TimeSpan remaining = nextAvailableTime - DateTime.UtcNow;
-            cooldownText.text = $"Next scouting available in {remaining.Hours}h {remaining.Minutes}m {remaining.Seconds}s";
+
+            TimeSpan remain = nextAvailableTime - DateTime.UtcNow;
+
+            cooldownText.text =
+                remain.Days + "d " +
+                remain.Hours + "h " +
+                remain.Minutes + "m " +
+                remain.Seconds + "s";
         }
     }
 
-    private void LoadCooldown()
+    void AnimateButton()
     {
-        string lastScoutStr = PlayerPrefs.GetString("last_scout_time", "");
-        if (!string.IsNullOrEmpty(lastScoutStr))
+        float scale = 1 + Mathf.Sin(Time.time * pulseSpeed) * scaleAmount;
+
+        scoutButton.transform.localScale =
+            originalScale * scale;
+
+        scoutButton.image.color =
+            Color.Lerp(originalColor, readyColor,
+            (Mathf.Sin(Time.time * pulseSpeed) + 1) / 2);
+    }
+
+    void LoadCooldown()
+    {
+        string lastScout = PlayerPrefs.GetString("last_scout_time", "");
+
+        if (!string.IsNullOrEmpty(lastScout))
         {
-            lastScoutTime = DateTime.Parse(lastScoutStr, null, System.Globalization.DateTimeStyles.RoundtripKind);
-            nextAvailableTime = lastScoutTime.AddDays(cooldownDays);
+            lastScoutTime =
+                DateTime.Parse(lastScout, null,
+                System.Globalization.DateTimeStyles.RoundtripKind);
+
+            nextAvailableTime =
+                lastScoutTime.AddDays(cooldownDays);
         }
         else
         {
-            lastScoutTime = DateTime.MinValue;
             nextAvailableTime = DateTime.MinValue;
         }
     }
 
-    private void SaveCooldown()
+    void SaveCooldown()
     {
-        PlayerPrefs.SetString("last_scout_time", lastScoutTime.ToString("o"));
-        PlayerPrefs.Save();
-    }
+        PlayerPrefs.SetString(
+            "last_scout_time",
+            lastScoutTime.ToString("o")
+        );
 
-    private void AnimateGlow()
-    {
-        float alpha = Mathf.PingPong(Time.time * glowPulseSpeed, maxGlowAlpha);
-        buttonGlow.color = new Color(originalGlowColor.r, originalGlowColor.g, originalGlowColor.b, alpha);
+        PlayerPrefs.Save();
     }
 }
