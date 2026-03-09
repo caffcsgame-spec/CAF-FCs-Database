@@ -1,1 +1,64 @@
+{
+  "market_listings": [
 
+    {
+      "listing_id": 100001,
+      "player_id": 25,
+      "seller_id": 4021,
+
+      "player_info": {
+        "name": "Sample Player",
+        "team_id": 11,
+        "country_id": 39,
+        "position": "ST",
+        "overall_rating": 84,
+        "card_type": "Rare"
+      },
+
+      "price_cc": 4200,
+      "tax_rate": 0.05,
+
+      "listing_time": "2026-03-09T10:20:00Z",
+      "expiry_time": "2026-03-10T10:20:00Z",
+
+      "status": "active"
+    },
+
+    {
+      "listing_id": 100002,
+      "player_id": 48,
+      "seller_id": 5110,
+
+      "player_info": {
+        "name": "Example Player",
+        "team_id": 3,
+        "country_id": 15,
+        "position": "CM",
+        "overall_rating": 91,
+        "card_type": "Epic"
+      },
+
+      "price_cc": 9800,
+      "tax_rate": 0.05,
+
+      "listing_time": "2026-03-09T11:00:00Z",
+      "expiry_time": "2026-03-11T11:00:00Z",
+
+      "status": "active"
+    }
+
+  ],
+
+  "market_metadata": {
+    "total_active_listings": 2,
+    "max_listings_allowed": 50000,
+    "market_refresh_seconds": 30
+  },
+
+  "listing_status_types": [
+    "active",
+    "sold",
+    "expired",
+    "cancelled"
+  ]
+}
