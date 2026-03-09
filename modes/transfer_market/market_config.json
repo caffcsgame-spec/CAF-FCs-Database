@@ -1,0 +1,87 @@
+{
+  "market_info": {
+    "market_name": "CAF FCs Global Transfer Market",
+    "currency": "CC",
+    "max_active_listings_per_user": 10,
+    "market_refresh_seconds": 30
+  },
+
+  "listing_rules": {
+    "listing_durations_hours": [12, 24, 48],
+    "listing_tax_rate": 0.05,
+    "cancel_listing_fee": 50,
+    "max_price": 100000,
+    "min_price": 100
+  },
+
+  "price_suggestion_formula": {
+    "base_multiplier": 120,
+    "rarity_bonus": {
+      "epic": 1.6,
+      "rare": 1.3,
+      "common": 1.0,
+      "base": 0.8
+    }
+  },
+
+  "card_type_rules": {
+    "epic": {
+      "overall_min": 90,
+      "market_demand": "very_high"
+    },
+    "rare": {
+      "overall_min": 80,
+      "overall_max": 89,
+      "market_demand": "high"
+    },
+    "common": {
+      "overall_min": 70,
+      "overall_max": 79,
+      "market_demand": "medium"
+    },
+    "base": {
+      "overall_max": 69,
+      "market_demand": "low"
+    }
+  },
+
+  "market_filters": {
+    "positions": [
+      "GK",
+      "CB",
+      "LB",
+      "RB",
+      "CDM",
+      "CM",
+      "CAM",
+      "LW",
+      "RW",
+      "ST"
+    ],
+    "rating_ranges": [
+      "60-69",
+      "70-79",
+      "80-89",
+      "90-99"
+    ],
+    "price_ranges": [
+      "0-500",
+      "500-2000",
+      "2000-5000",
+      "5000-20000",
+      "20000-100000"
+    ]
+  },
+
+  "market_security": {
+    "duplicate_player_check": true,
+    "server_price_validation": true,
+    "listing_limit_enforced": true
+  },
+
+  "market_events": {
+    "market_open": true,
+    "auto_remove_expired_listings": true,
+    "return_unsold_player_to_owner": true
+  }
+}
