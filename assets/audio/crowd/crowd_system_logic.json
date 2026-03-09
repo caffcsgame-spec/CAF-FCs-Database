@@ -1,0 +1,103 @@
+{
+  "base_ambience_system": {
+    "start_match": "base_ambience/light_cheer.mp3",
+    "intensity_levels": {
+      "low": "base_ambience/light_cheer.mp3",
+      "medium": "base_ambience/medium_cheer.mp3",
+      "high": "base_ambience/intense_cheer.mp3"
+    },
+    "loop": true,
+    "crossfade_ms": 1500
+  },
+
+  "match_intensity_logic": {
+    "conditions": [
+      {
+        "event": "kickoff",
+        "set_intensity": "low"
+      },
+      {
+        "event": "dangerous_attack",
+        "set_intensity": "medium"
+      },
+      {
+        "event": "last_10_minutes",
+        "set_intensity": "high"
+      },
+      {
+        "event": "goal_scored",
+        "set_intensity": "high"
+      }
+    ]
+  },
+
+  "event_reaction_triggers": {
+    "goal_scored": {
+      "small_goal": "goal_reaction/small_goal.mp3",
+      "normal_goal": "goal_reaction/normal_goal.mp3",
+      "amazing_goal": "goal_reaction/amazing_goal.mp3"
+    },
+
+    "penalty_event": {
+      "penalty_goal": "penalty_reaction/penalty_goal.mp3",
+      "penalty_miss": "penalty_reaction/penalty_miss.mp3"
+    },
+
+    "foul_event": {
+      "minor_foul": "foul_reaction/minor_foul.mp3",
+      "serious_foul": "foul_reaction/serious_foul.mp3"
+    },
+
+    "corner_event": {
+      "normal_corner": "corner_reaction/normal_corner.mp3",
+      "danger_corner": "corner_reaction/danger_corner.mp3"
+    },
+
+    "skill_move_event": {
+      "dribble_success": "skill_move_reaction/dribble_success.mp3",
+      "nutmeg": "skill_move_reaction/nutmeg.mp3",
+      "fancy_move": "skill_move_reaction/fancy_move.mp3"
+    }
+  },
+
+  "crowd_team_bias": {
+    "home_goal": {
+      "reaction": "increase_volume",
+      "volume_multiplier": 1.2
+    },
+    "away_goal": {
+      "reaction": "boo_or_low_cheer",
+      "volume_multiplier": 0.8
+    }
+  },
+
+  "random_crowd_life": {
+    "chatter_clips": [
+      "random_chatter/crowd_talk_1.mp3",
+      "random_chatter/crowd_talk_2.mp3",
+      "random_chatter/crowd_talk_3.mp3"
+    ],
+    "trigger_interval_seconds": [10, 30],
+    "volume": 0.5
+  },
+
+  "audio_priority_system": [
+    "goal_scored",
+    "penalty_event",
+    "skill_move_event",
+    "foul_event",
+    "corner_event",
+    "random_crowd_life"
+  ],
+
+  "cooldown_system": {
+    "reaction_cooldown_ms": 2000,
+    "same_event_repeat_ms": 4000
+  },
+
+  "audio_parameters": {
+    "volume_range": [0.7, 1.0],
+    "pitch_variation": [0.95, 1.05],
+    "spatial_blend": 0.8
+  }
+}
