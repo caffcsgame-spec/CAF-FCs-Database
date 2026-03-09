@@ -1,0 +1,72 @@
+{
+  "max_scout_level": 5,
+
+  "levels": [
+
+    {
+      "level": 1,
+      "rating_range": { "min": 58, "max": 72 },
+      "card_probability": {
+        "Base": 72,
+        "Common": 24,
+        "Rare": 4,
+        "Epic": 0
+      },
+      "youth_probability": 25,
+      "scout_cost": 500
+    },
+
+    {
+      "level": 2,
+      "rating_range": { "min": 62, "max": 78 },
+      "card_probability": {
+        "Base": 55,
+        "Common": 32,
+        "Rare": 11,
+        "Epic": 2
+      },
+      "youth_probability": 30,
+      "scout_cost": 800
+    },
+
+    {
+      "level": 3,
+      "rating_range": { "min": 68, "max": 84 },
+      "card_probability": {
+        "Base": 40,
+        "Common": 36,
+        "Rare": 19,
+        "Epic": 5
+      },
+      "youth_probability": 35,
+      "scout_cost": 1200
+    },
+
+    {
+      "level": 4,
+      "rating_range": { "min": 72, "max": 90 },
+      "card_probability": {
+        "Base": 25,
+        "Common": 40,
+        "Rare": 27,
+        "Epic": 8
+      },
+      "youth_probability": 40,
+      "scout_cost": 1800
+    },
+
+    {
+      "level": 5,
+      "rating_range": { "min": 78, "max": 95 },
+      "card_probability": {
+        "Base": 10,
+        "Common": 42,
+        "Rare": 36,
+        "Epic": 12
+      },
+      "youth_probability": 45,
+      "scout_cost": 2500
+    }
+
+  ]
+    }
