@@ -1,0 +1,39 @@
+{
+  "potential_by_age": {
+
+    "16": {
+      "min_potential": 85,
+      "max_potential": 95
+    },
+
+    "17": {
+      "min_potential": 82,
+      "max_potential": 92
+    },
+
+    "18": {
+      "min_potential": 78,
+      "max_potential": 88
+    }
+
+  },
+
+  "overall_generation": {
+
+    "16": {
+      "min_overall": 60,
+      "max_overall": 70
+    },
+
+    "17": {
+      "min_overall": 62,
+      "max_overall": 72
+    },
+
+    "18": {
+      "min_overall": 64,
+      "max_overall": 74
+    }
+
+  }
+}
