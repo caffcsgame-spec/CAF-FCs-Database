@@ -1,0 +1,64 @@
+{
+  "transactions": [
+    {
+      "transaction_id": 500001,
+      "listing_id": 100001,
+      "buyer_id": 6210,
+      "seller_id": 4021,
+      "player_id": 25,
+      "player_info": {
+        "name": "Sample Player",
+        "team_id": 11,
+        "position": "ST",
+        "overall_rating": 84,
+        "card_type": "Rare"
+      },
+      "price_cc": 4200,
+      "tax_cc": 210,
+      "transaction_time": "2026-03-09T12:05:00Z",
+      "transaction_type": "market_purchase",
+      "notes": "First sale of player"
+    },
+    {
+      "transaction_id": 500002,
+      "listing_id": 100002,
+      "buyer_id": 7315,
+      "seller_id": 5110,
+      "player_id": 48,
+      "player_info": {
+        "name": "Example Player",
+        "team_id": 3,
+        "position": "CM",
+        "overall_rating": 91,
+        "card_type": "Epic"
+      },
+      "price_cc": 9800,
+      "tax_cc": 490,
+      "transaction_time": "2026-03-09T13:20:00Z",
+      "transaction_type": "market_purchase",
+      "notes": "Epic player sold"
+    }
+  ],
+
+  "analytics": {
+    "player_price_history": {
+      "25": [
+        {"time": "2026-03-09T10:20:00Z", "price_cc": 4200},
+        {"time": "2026-03-09T12:05:00Z", "price_cc": 4200}
+      ],
+      "48": [
+        {"time": "2026-03-09T11:00:00Z", "price_cc": 9800},
+        {"time": "2026-03-09T13:20:00Z", "price_cc": 9800}
+      ]
+    },
+    "daily_volume_cc": [
+      {"date": "2026-03-09", "volume_cc": 14000, "transactions": 2}
+    ],
+    "top_traded_players": [48, 25]
+  },
+
+  "metadata": {
+    "total_transactions": 2,
+    "max_history_entries": 100000
+  }
+}
