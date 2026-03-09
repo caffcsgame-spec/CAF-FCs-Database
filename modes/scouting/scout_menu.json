@@ -1,0 +1,40 @@
+{
+  "menu_id": "scout_menu",
+
+  "title": "Player Scouting",
+
+  "buttons": [
+
+    {
+      "id": "start_scout",
+      "text": "Start Scouting",
+      "action": "start_scout"
+    },
+
+    {
+      "id": "view_last_result",
+      "text": "Last Scout Result",
+      "action": "show_result"
+    }
+
+  ],
+
+  "info_panels": [
+
+    {
+      "id": "scout_level",
+      "label": "Scout Level"
+    },
+
+    {
+      "id": "scout_xp",
+      "label": "Scout XP"
+    },
+
+    {
+      "id": "cooldown",
+      "label": "Next Scout"
+    }
+
+  ]
+}
