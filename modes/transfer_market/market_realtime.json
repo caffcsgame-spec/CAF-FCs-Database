@@ -1,0 +1,48 @@
+{
+  "update_interval_seconds": 30,
+  "dynamic_factors": {
+    "player_demand": {
+      "weight": 0.4,
+      "description": "Higher number of views/purchases increases price."
+    },
+    "player_performance": {
+      "weight": 0.3,
+      "description": "Recent match stats (goals, assists, ratings) affect price."
+    },
+    "squad_rarity": {
+      "weight": 0.2,
+      "description": "Players from less common squads increase in value."
+    },
+    "global_market_trends": {
+      "weight": 0.1,
+      "description": "Overall game economy affects minor adjustments on all prices."
+    }
+  },
+  "price_limits": {
+    "min_multiplier": 0.5,
+    "max_multiplier": 2.0,
+    "base_price_field": "price_cc"
+  },
+  "visual_feedback": {
+    "price_increase_color": "#00FF00",
+    "price_decrease_color": "#FF0000",
+    "animation_type": "pulse",
+    "duration_ms": 500
+  },
+  "logic": {
+    "calculate_new_price": "new_price = base_price_cc * (1 + demand_factor*0.4 + performance_factor*0.3 + rarity_factor*0.2 + trend_factor*0.1)",
+    "apply_limits": "If new_price < base_price_cc*min_multiplier, set to min; If new_price > base_price_cc*max_multiplier, set to max",
+    "notify_user": "show subtle animation on player card when price changes",
+    "market_refresh": "every update_interval_seconds, recalculate all players prices"
+  },
+  "network_sync": {
+    "enabled": true,
+    "sync_type": "event-driven",
+    "description": "Updates propagate to all clients in online mode to ensure consistency."
+  },
+  "analytics": {
+    "track_most_viewed": true,
+    "track_most_bought": true,
+    "track_price_fluctuations": true
+  }
+}
