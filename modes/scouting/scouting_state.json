@@ -1,0 +1,54 @@
+{
+  "scouting_status": {
+    "last_scouting_date": "2026-03-02",
+    "next_available_date": "2026-03-09",
+    "cooldown_days": 7,
+    "scouting_available": false
+  },
+
+  "last_generated_player": {
+    "youth_id": 12,
+    "name": "Abdul Kamara",
+    "country_id": 39,
+    "age": 17,
+    "position": "ST",
+
+    "overall_rating": 70,
+    "potential": 91,
+
+    "card_type": "Rare",
+    "card_template": "CAF FCs/assets/player_cards/templates/rare.png",
+
+    "face_image": "assets/players/youth/faces/age_17/youth_6.png"
+  },
+
+  "weekly_scouting": {
+    "scouts_used": 1,
+    "scouts_limit": 1,
+    "week_start": "2026-03-02",
+    "week_end": "2026-03-09"
+  },
+
+  "scouting_history": [
+    {
+      "youth_id": 10,
+      "name": "Moussa Traore",
+      "country_id": 32,
+      "age": 16,
+      "position": "RW",
+      "overall_rating": 66,
+      "potential": 93,
+      "card_type": "Rare"
+    },
+    {
+      "youth_id": 11,
+      "name": "Peter Ndlovu",
+      "country_id": 54,
+      "age": 18,
+      "position": "CB",
+      "overall_rating": 72,
+      "potential": 85,
+      "card_type": "Common"
+    }
+  ]
+}
