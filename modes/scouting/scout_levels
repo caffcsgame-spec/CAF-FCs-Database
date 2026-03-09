@@ -1,0 +1,62 @@
+{
+  "max_scout_level": 5,
+
+  "levels": [
+
+    {
+      "level": 1,
+      "rating_range": { "min": 60, "max": 75 },
+      "card_probability": {
+        "Base": 70,
+        "Common": 25,
+        "Rare": 5,
+        "Epic": 0
+      }
+    },
+
+    {
+      "level": 2,
+      "rating_range": { "min": 65, "max": 80 },
+      "card_probability": {
+        "Base": 55,
+        "Common": 30,
+        "Rare": 13,
+        "Epic": 2
+      }
+    },
+
+    {
+      "level": 3,
+      "rating_range": { "min": 70, "max": 85 },
+      "card_probability": {
+        "Base": 40,
+        "Common": 35,
+        "Rare": 20,
+        "Epic": 5
+      }
+    },
+
+    {
+      "level": 4,
+      "rating_range": { "min": 75, "max": 90 },
+      "card_probability": {
+        "Base": 25,
+        "Common": 40,
+        "Rare": 28,
+        "Epic": 7
+      }
+    },
+
+    {
+      "level": 5,
+      "rating_range": { "min": 80, "max": 95 },
+      "card_probability": {
+        "Base": 10,
+        "Common": 45,
+        "Rare": 35,
+        "Epic": 10
+      }
+    }
+
+  ]
+}
