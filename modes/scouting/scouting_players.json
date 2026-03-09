@@ -1,0 +1,67 @@
+{
+  "youth_players": [
+    {
+      "youth_id": 1,
+      "name": "Abdul Kamara",
+      "country_id": 39,
+      "age": 16,
+      "position": "ST",
+      "overall_rating": 69,
+      "potential": 84,
+      "card_type": "Common",
+      "card_template": "CAF FCs/assets/player_cards/templates/common.png",
+      "face_image": "assets/players/youth/faces/age_16/youth_1.png",
+      "skill_tree": {
+        "dribbling": 2,
+        "shooting": 3,
+        "passing": 1,
+        "defense": 1,
+        "physical": 2
+      },
+      "special_moves": [],
+      "squad_synergy": 0
+    },
+    {
+      "youth_id": 2,
+      "name": "Ibrahim Diallo",
+      "country_id": 32,
+      "age": 17,
+      "position": "CAM",
+      "overall_rating": 77,
+      "potential": 92,
+      "card_type": "Rare",
+      "card_template": "CAF FCs/assets/player_cards/templates/rare.png",
+      "face_image": "assets/players/youth/faces/age_17/youth_2.png",
+      "skill_tree": {
+        "dribbling": 4,
+        "shooting": 3,
+        "passing": 4,
+        "defense": 2,
+        "physical": 3
+      },
+      "special_moves": ["Curve Shot", "Fake Shot"],
+      "squad_synergy": 2
+    },
+    {
+      "youth_id": 3,
+      "name": "Peter Ndlovu",
+      "country_id": 54,
+      "age": 18,
+      "position": "CB",
+      "overall_rating": 86,
+      "potential": 95,
+      "card_type": "Epic",
+      "card_template": "CAF FCs/assets/player_cards/templates/epic.png",
+      "face_image": "assets/players/youth/faces/age_18/youth_3.png",
+      "skill_tree": {
+        "dribbling": 1,
+        "shooting": 2,
+        "passing": 3,
+        "defense": 5,
+        "physical": 4
+      },
+      "special_moves": ["Slide Tackle", "Power Header"],
+      "squad_synergy": 3
+    }
+  ]
+}
