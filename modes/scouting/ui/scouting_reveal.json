@@ -1,7 +1,7 @@
 {
   "screen": "scouting_reveal",
 
-  "background": "assets/ui/scouting/scouting_bg.png",
+  "background": "assets/ui/backgrounds/scout_reveal_bg.png",
 
   "elements": {
 
