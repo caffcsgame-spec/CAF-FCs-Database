@@ -1,0 +1,22 @@
+{
+  "screen": "scouting_reveal",
+
+  "background": "assets/ui/scouting/scouting_bg.png",
+
+  "elements": {
+
+    "card_slot": {
+      "position": "center",
+      "animation": "flip"
+    },
+
+    "player_name": {
+      "position": "bottom_center"
+    },
+
+    "player_stats": {
+      "position": "bottom_panel"
+    }
+
+  }
+}
