@@ -1,0 +1,98 @@
+{
+  "market_operations": {
+
+    "create_listing": {
+      "required_fields": [
+        "player_id",
+        "seller_id",
+        "price_cc",
+        "listing_duration_hours"
+      ],
+      "validation": {
+        "price_min_check": true,
+        "price_max_check": true,
+        "listing_limit_check": true,
+        "duplicate_player_check": true
+      },
+      "action": "add_listing_to_market_database"
+    },
+
+    "buy_player": {
+      "required_fields": [
+        "listing_id",
+        "buyer_id"
+      ],
+      "validation": {
+        "listing_exists": true,
+        "buyer_has_enough_cc": true,
+        "listing_not_expired": true
+      },
+      "transaction": {
+        "deduct_cc_from_buyer": true,
+        "apply_market_tax": true,
+        "send_cc_to_seller": true,
+        "transfer_player_to_buyer": true
+      },
+      "action": "remove_listing_from_market"
+    },
+
+    "cancel_listing": {
+      "required_fields": [
+        "listing_id",
+        "seller_id"
+      ],
+      "validation": {
+        "ownership_check": true
+      },
+      "transaction": {
+        "apply_cancel_fee": true
+      },
+      "action": "return_player_to_seller"
+    }
+
+  },
+
+  "listing_lifecycle": {
+
+    "check_expired_listings": {
+      "interval_seconds": 60,
+      "action": "remove_and_return_player"
+    },
+
+    "remove_and_return_player": {
+      "steps": [
+        "remove_listing_from_market",
+        "return_player_to_original_owner"
+      ]
+    }
+
+  },
+
+  "market_refresh": {
+    "refresh_interval_seconds": 30,
+    "actions": [
+      "fetch_latest_listings",
+      "update_market_ui"
+    ]
+  },
+
+  "transaction_logs": {
+    "enabled": true,
+    "log_fields": [
+      "transaction_id",
+      "buyer_id",
+      "seller_id",
+      "player_id",
+      "price_cc",
+      "tax_cc",
+      "timestamp"
+    ]
+  },
+
+  "anti_cheat": {
+    "server_side_validation": true,
+    "currency_integrity_check": true,
+    "player_duplicate_prevention": true
+  }
+
+}
